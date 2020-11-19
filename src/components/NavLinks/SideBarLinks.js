@@ -1,0 +1,97 @@
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import {
+  makeStyles,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  createMuiTheme,
+  ThemeProvider
+} from "@material-ui/core";
+import { styles } from "../../styles/styles";
+import IconMaker from "../IconMaker/IconMaker";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: "100%",
+    backgroundColor: styles.colors.darkGray,
+    color: "gray",
+    textTransform: "uppercase",
+    fontFamily: "Roboto Condensed, sans-serif"
+  },
+  icon: {
+    color: "gray"
+  },
+  icon2: {
+    color: "white"
+  },
+  list: {
+    "& .Mui-selected": {
+      color: "white"
+    }
+  }
+}));
+
+const theme = createMuiTheme({
+  props: {
+    MuiButtonBase: {
+      disableRipple: true
+    }
+  }
+});
+
+const SelectedListItem = ({ items, iconImage, hide }) => {
+  const classes = useStyles();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleListItemClick = (event, index) => setSelectedIndex(index);
+
+  const selectIconColor = index =>
+    selectedIndex === index ? classes.icon2 : classes.icon;
+
+  return (
+    <div className={classes.root}>
+      <ThemeProvider theme={theme}>
+        <List
+          className={classes.list}
+          component='nav'
+          aria-label='main mailbox folders'
+        >
+          {items.map((text, index) => (
+            <Link
+              href={text[1]}
+              underline='none'
+              color='inherit'
+              onClick={hide}
+            >
+              <ListItem
+                button
+                selected={selectedIndex === index}
+                onClick={event => handleListItemClick(event, index)}
+                key={text[0]}
+              >
+                <ListItemIcon>
+                  <IconMaker
+                    icon={iconImage[index]}
+                    iconColor={selectIconColor(index)}
+                  />
+                </ListItemIcon>
+                <ListItemText disableTypography='true' primary={text[0]} />
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+      </ThemeProvider>
+    </div>
+  );
+};
+
+SelectedListItem.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  iconImage: PropTypes.arrayOf(PropTypes.string),
+  hide: PropTypes.func.isRequired
+};
+
+export default SelectedListItem;
