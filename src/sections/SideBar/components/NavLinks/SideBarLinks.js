@@ -1,15 +1,6 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
-import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined";
-import NotesOutlinedIcon from "@material-ui/icons/NotesOutlined";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Link from "@material-ui/core/Link";
+import { makeStyles, Link, List, ListItem, ListItemIcon, ListItemText, createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { HomeOutlinedIcon, PersonOutlineOutlinedIcon, MailOutlineOutlinedIcon, NotesOutlinedIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 200,
     backgroundColor: "rgb(61, 61, 61)",
     color: "gray",
-    border: "1px solid black",
     textTransform: "uppercase"
   },
   icon: {
@@ -41,7 +31,7 @@ const theme = createMuiTheme({
   }
 });
 
-export default function SelectedListItem() {
+const SelectedListItem = () => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -117,4 +107,6 @@ export default function SelectedListItem() {
       </ThemeProvider>
     </div>
   );
-}
+};
+
+export default SelectedListItem;
