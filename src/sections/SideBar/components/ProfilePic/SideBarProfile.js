@@ -1,5 +1,7 @@
 import React from "react";
-import { makeStyles, Avatar, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProfilePic = () => {
+export default function ProfilePic() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -43,7 +45,5 @@ const ProfilePic = () => {
         Carlos Valero
       </Typography>
     </div>
-  );
-};
-
-export default ProfilePic;
+  )
+}
