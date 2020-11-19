@@ -47,6 +47,30 @@ const SelectedListItem = () => {
     }
   };
 
+  const selectIcon = (index) => {
+    if (index === 0) {
+      return <HomeOutlinedIcon className={selectIconColor(index)} />
+    } else if (index === 1) {
+      return <PersonOutlineOutlinedIcon className={selectIconColor(index)} />
+    } else if (index === 2) {
+      return <NotesOutlinedIcon className={selectIconColor(index)} />
+    } else {
+      return <MailOutlineOutlinedIcon className={selectIconColor(index)} />
+    }
+  };
+
+  const selectLink = (index) => {
+    if (index === 0) {
+      return "./home"
+    } else if (index === 1) {
+      return "./aboute-me"
+    } else if (index === 2) {
+      return "./resume"
+    } else {
+      return "./contact-me"
+    }
+  };
+
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
@@ -55,54 +79,21 @@ const SelectedListItem = () => {
           component="nav"
           aria-label="main mailbox folders"
         >
-          <Link underline="none" color="inherit">
-            <ListItem
-              button
-              selected={selectedIndex === 0}
-              onClick={(event) => handleListItemClick(event, 0)}
+        {['Home', 'About me', 'Resume', 'Contact me'].map((text, index) => (
+          <Link href={selectLink(index)} underline="none" color="inherit">
+            <ListItem 
+            button 
+            selected={selectedIndex === index} 
+            onClick={(event) => handleListItemClick(event, index)}
+            key={text}
             >
               <ListItemIcon>
-                <HomeOutlinedIcon className={selectIconColor(0)} />
+                {selectIcon(index)}
               </ListItemIcon>
-              <ListItemText primary="Home" />
+              <ListItemText primary={text} />
             </ListItem>
           </Link>
-          <Link underline="none" color="inherit">
-            <ListItem
-              button
-              selected={selectedIndex === 1}
-              onClick={(event) => handleListItemClick(event, 1)}
-            >
-              <ListItemIcon>
-                <PersonOutlineOutlinedIcon className={selectIconColor(1)} />
-              </ListItemIcon>
-              <ListItemText primary="About me" />
-            </ListItem>
-          </Link>
-          <Link underline="none" color="inherit">
-            <ListItem
-              button
-              selected={selectedIndex === 2}
-              onClick={(event) => handleListItemClick(event, 2)}
-            >
-              <ListItemIcon>
-                <NotesOutlinedIcon className={selectIconColor(2)} />
-              </ListItemIcon>
-              <ListItemText primary="Resume" />
-            </ListItem>
-          </Link>
-          <Link underline="none" color="inherit">
-            <ListItem
-              button
-              selected={selectedIndex === 3}
-              onClick={(event) => handleListItemClick(event, 3)}
-            >
-              <ListItemIcon>
-                <MailOutlineOutlinedIcon className={selectIconColor(3)} />
-              </ListItemIcon>
-              <ListItemText primary="Contact me" />
-            </ListItem>
-          </Link>
+        ))}
         </List>
       </ThemeProvider>
     </div>
