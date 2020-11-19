@@ -12,7 +12,7 @@ export const Routes = () => {
             <Home />
           </Route>
           <Route exact path="/">
-            <Redirect to="/Home" />
+            <Redirect to="/home" />
           </Route>
           <Route exact path="/about-me">
             <AboutMe />
