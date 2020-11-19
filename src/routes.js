@@ -1,11 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { SideBar } from './sections/SideBar/';
-import { Home } from './sections/Home/';
-import { AboutMe } from './sections/AboutMe/';
-import { Resume } from './sections/Resume/';
-import { ContactMe } from './sections/ContactMe/';
-import { NotFound } from './sections/NotFound/';
+import { SideBar, Home, AboutMe, Resume, ContactMe, NotFound } from './sections/index';
 
 export const Routes = () => {
   return (
