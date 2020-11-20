@@ -40,37 +40,14 @@ const SelectedListItem = () => {
   };
 
   const selectIconColor = (index) => {
-    if (selectedIndex === index) {
-      return classes.icon2;
-    } else {
-      return classes.icon;
-    }
+    return (selectedIndex === index) ? classes.icon2 : classes.icon;
   };
 
-  const selectIcon = (index) => {
-    if (index === 0) {
-      return <HomeOutlinedIcon className={selectIconColor(index)} />
-    } else if (index === 1) {
-      return <PersonOutlineOutlinedIcon className={selectIconColor(index)} />
-    } else if (index === 2) {
-      return <NotesOutlinedIcon className={selectIconColor(index)} />
-    } else {
-      return <MailOutlineOutlinedIcon className={selectIconColor(index)} />
-    }
-  };
-
-  const selectLink = (index) => {
-    if (index === 0) {
-      return "./home"
-    } else if (index === 1) {
-      return "./aboute-me"
-    } else if (index === 2) {
-      return "./resume"
-    } else {
-      return "./contact-me"
-    }
-  };
-
+  const arrValues = [["Home", <HomeOutlinedIcon className={selectIconColor(0)} />, "./home"], 
+  ["About me", <PersonOutlineOutlinedIcon className={selectIconColor(1)} />, "./aboute-me"], 
+  ["Resume", <NotesOutlinedIcon className={selectIconColor(2)} />, "./resume"], 
+  ["Contact me", <MailOutlineOutlinedIcon className={selectIconColor(3)} />, "./contact-me"]];
+  
   return (
     <div className={classes.root}>
       <ThemeProvider theme={theme}>
@@ -79,18 +56,18 @@ const SelectedListItem = () => {
           component="nav"
           aria-label="main mailbox folders"
         >
-        {['Home', 'About me', 'Resume', 'Contact me'].map((text, index) => (
-          <Link href={selectLink(index)} underline="none" color="inherit">
+        {arrValues.map((text, index) => (
+          <Link href={text[2]} underline="none" color="inherit">
             <ListItem 
             button 
             selected={selectedIndex === index} 
             onClick={(event) => handleListItemClick(event, index)}
-            key={text}
+            key={text[0]}
             >
               <ListItemIcon>
-                {selectIcon(index)}
+                {text[1]}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={text[0]} />
             </ListItem>
           </Link>
         ))}
