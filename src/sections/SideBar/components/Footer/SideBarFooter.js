@@ -1,16 +1,17 @@
 import React from "react";
 import { makeStyles, Link, Typography } from "@material-ui/core";
 import { FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from '@material-ui/icons';
+import { styles } from "../../../../styles/styles"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    width: "16%",
-    minWidth: 200,
-    maxWidth: 240,
-    backgroundColor: "rgb(61, 61, 61)",
+    width: styles.sizes.sidebarDimensions.width,
+    minWidth: styles.sizes.sidebarDimensions.minWidth,
+    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    backgroundColor: styles.colors.gray1,
   },
   container: {
     display: "flex",
@@ -19,17 +20,19 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: "gray",
     textAlign: "center",
-    paddingBottom: 15
+    paddingBottom: styles.sizes.thickness.thick6,
   },
   icon: {
     color: "gray",
-    margin: 5,
-    marginBottom: 15
+    margin: styles.sizes.thickness.thick4,
+    marginTop: styles.sizes.thickness.thick9,
+    marginBottom: styles.sizes.thickness.thick6,
   },
   icon2: {
     color: "white",
-    margin: 5,
-    marginBottom: 15
+    margin: styles.sizes.thickness.thick4,
+    marginTop: styles.sizes.thickness.thick9,
+    marginBottom: styles.sizes.thickness.thick6,
   }
 }));
 
