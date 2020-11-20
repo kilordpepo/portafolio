@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 200,
     maxWidth: 240,
     backgroundColor: "rgb(61, 61, 61)",
-    border: "1px solid black",
   },
   container: {
     display: "flex",
