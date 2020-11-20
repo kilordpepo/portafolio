@@ -16,9 +16,14 @@ export const styles = {
       thick7: 20,
       thick8: 25,
       thick9: 30,
-      thick10: 40,
-      thick11: 42
+      thick10: 35,
+      thick11: 40,
+      thick12: 45,
+      thick13: 50
     },
+    specialThick: { //This rule is for really specific numbers. This way, that values do not push the normal ones.
+      thick1: 42
+      },
     sidebarDimensions: {
       width: "16%",
       minWidth: 200,
