@@ -1,4 +1,4 @@
-export const theme = {
+export const styles = {
   colors: {
     gray1: "rgb(45, 45, 45)",
     gray2: "rgb(70, 70, 70)",
