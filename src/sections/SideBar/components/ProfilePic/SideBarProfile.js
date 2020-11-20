@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: styles.colors.tBlue,
     padding: styles.sizes.thickness.thick4,
     position: "relative",
-    bottom: styles.sizes.thickness.thick11
+    bottom: styles.sizes.specialThick.thick1
   }
 }));
 
