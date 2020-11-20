@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Link, List, ListItem, ListItemIcon, ListItemText, createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { HomeOutlinedIcon, PersonOutlineOutlinedIcon, MailOutlineOutlinedIcon, NotesOutlinedIcon } from "@material-ui/icons";
+import { styles } from "../../../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
