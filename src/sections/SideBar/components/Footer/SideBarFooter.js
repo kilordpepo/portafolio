@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, Link, Typography } from "@material-ui/core";
 import { FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from '@material-ui/icons';
-import { styles } from "../../../../styles/styles"
+import { styles } from "../../../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
