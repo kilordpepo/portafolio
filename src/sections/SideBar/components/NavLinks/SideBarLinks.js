@@ -4,9 +4,10 @@ import { HomeOutlinedIcon, PersonOutlineOutlinedIcon, MailOutlineOutlinedIcon, N
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    maxWidth: 200,
-    backgroundColor: "rgb(61, 61, 61)",
+    width: styles.sizes.sidebarDimensions.width,
+    minWidth: styles.sizes.sidebarDimensions.minWidth,
+    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    backgroundColor: styles.colors.gray1,
     color: "gray",
     textTransform: "uppercase"
   },
