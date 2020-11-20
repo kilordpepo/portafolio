@@ -46,53 +46,39 @@ const Footer = () => {
     return (selectedIndex === index) ? classes.icon2 : classes.icon;
   };
 
+  const arrValues = [["https://www.facebook.com/", <FacebookIcon 
+  className={selectIconColor(1)} 
+  onMouseOver={(event) => handleMouseOver(event, 1)} 
+  onMouseOut={(event) => handleMouseOver(event, 0)} 
+  />], 
+  ["https://www.instagram.com/", <InstagramIcon 
+  className={selectIconColor(2)} 
+  onMouseOver={(event) => handleMouseOver(event, 2)} 
+  onMouseOut={(event) => handleMouseOver(event, 0)}
+  /> ], 
+  ["https://www.linkedin.com/", <LinkedInIcon 
+  className={selectIconColor(3)} 
+  onMouseOver={(event) => handleMouseOver(event, 3)} 
+  onMouseOut={(event) => handleMouseOver(event, 0)}
+  />], 
+  ["https://github.com/", <GitHubIcon 
+  className={selectIconColor(4)} 
+  onMouseOver={(event) => handleMouseOver(event, 4)} 
+  onMouseOut={(event) => handleMouseOver(event, 0)}
+  />]];
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <Link 
-        href="https://www.facebook.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <FacebookIcon 
-          className={selectIconColor(1)} 
-          onMouseOver={(event) => handleMouseOver(event, 1)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://www.instagram.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <InstagramIcon 
-          className={selectIconColor(2)} 
-          onMouseOver={(event) => handleMouseOver(event, 2)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://www.linkedin.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <LinkedInIcon 
-          className={selectIconColor(3)} 
-          onMouseOver={(event) => handleMouseOver(event, 3)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://github.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <GitHubIcon 
-          className={selectIconColor(4)} 
-          onMouseOver={(event) => handleMouseOver(event, 4)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
+        {arrValues.map((text, index) => (
+          <Link
+          href={text[0]}
+          target="_blank"
+          rel="noopener"
+          >
+            {text[1]}
+          </Link>
+        ))}
       </div>
       <div className={classes.container}>
         <Typography className={classes.text} variant="body2">
