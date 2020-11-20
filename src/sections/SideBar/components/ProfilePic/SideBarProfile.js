@@ -1,23 +1,24 @@
 import React from "react";
 import { makeStyles, Avatar, Typography } from "@material-ui/core";
+import { styles } from "../../../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "16%",
-    minWidth: 200,
-    maxWidth: 240,
-    backgroundColor: "rgb(61, 61, 61)",
+    width: styles.sizes.sidebarDimensions.width,
+    minWidth: styles.sizes.sidebarDimensions.minWidth,
+    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    backgroundColor: styles.colors.gray1,
   },
   pic: {
     width: "100%",
-    height: 200,
+    height: styles.sizes.sidebarDimensions.minWidth,
   },
   text: {
     color: "white",
-    backgroundColor: "rgba(0, 136, 235, 0.75)",
-    padding: "5px",
+    backgroundColor: styles.colors.tBlue,
+    padding: styles.sizes.thickness.thick4,
     position: "relative",
-    bottom: 42
+    bottom: styles.sizes.thickness.thick10
   }
 }));
 
