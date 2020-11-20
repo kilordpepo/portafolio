@@ -6,7 +6,7 @@ export const theme = {
     tBlue: "rgba(0, 136, 235, 0.75)",
   },
   sizes: {
-    borderThickness: {
+    thickness: {
       thick1: 1,
       thick2: 2,
       thick3: 4,
@@ -14,6 +14,8 @@ export const theme = {
       thick5: 10,
       thick6: 15,
       thick7: 20,
+      thick8: 25,
+      thick9: 30
     },
     sidebarDimensions: {
       width: "16%",
