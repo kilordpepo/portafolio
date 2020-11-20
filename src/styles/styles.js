@@ -16,7 +16,8 @@ export const styles = {
       thick7: 20,
       thick8: 25,
       thick9: 30,
-      thick10: 42
+      thick10: 40,
+      thick11: 42
     },
     sidebarDimensions: {
       width: "16%",
