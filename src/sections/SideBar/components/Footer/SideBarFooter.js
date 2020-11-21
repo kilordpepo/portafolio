@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     width: styles.sizes.sidebarDimensions.width,
     minWidth: styles.sizes.sidebarDimensions.minWidth,
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
-    backgroundColor: styles.colors.gray1,
+    backgroundColor: styles.colors.darkGray
   },
   container: {
     display: "flex",
@@ -20,19 +20,19 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: "gray",
     textAlign: "center",
-    paddingBottom: styles.sizes.thickness.thick6,
+    paddingBottom: styles.sizes.specialThick.spacingThick2
   },
   icon: {
     color: "gray",
-    margin: styles.sizes.thickness.thick4,
-    marginTop: styles.sizes.thickness.thick9,
-    marginBottom: styles.sizes.thickness.thick6,
+    margin: styles.sizes.specialThick.spacingThick1,
+    marginTop: styles.sizes.thickness.thick16,
+    marginBottom: styles.sizes.specialThick.spacingThick2
   },
   icon2: {
     color: "white",
-    margin: styles.sizes.thickness.thick4,
-    marginTop: styles.sizes.thickness.thick9,
-    marginBottom: styles.sizes.thickness.thick6,
+    margin: styles.sizes.specialThick.spacingThick1,
+    marginTop: styles.sizes.thickness.thick16,
+    marginBottom: styles.sizes.specialThick.spacingThick2
   }
 }));
 
