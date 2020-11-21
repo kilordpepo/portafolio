@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, Link, Typography } from "@material-ui/core";
-import { FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from '@material-ui/icons';
 import { styles } from "../../../../styles/styles";
+import IconMaker from './IconMaker.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,37 +48,25 @@ const Footer = () => {
     return (selectedIndex === index) ? classes.icon2 : classes.icon;
   };
 
-  const arrValues = [["https://www.facebook.com/", <FacebookIcon 
-  className={selectIconColor(1)} 
-  onMouseOver={(event) => handleMouseOver(event, 1)} 
-  onMouseOut={(event) => handleMouseOver(event, 0)} 
-  />], 
-  ["https://www.instagram.com/", <InstagramIcon 
-  className={selectIconColor(2)} 
-  onMouseOver={(event) => handleMouseOver(event, 2)} 
-  onMouseOut={(event) => handleMouseOver(event, 0)}
-  /> ], 
-  ["https://www.linkedin.com/", <LinkedInIcon 
-  className={selectIconColor(3)} 
-  onMouseOver={(event) => handleMouseOver(event, 3)} 
-  onMouseOut={(event) => handleMouseOver(event, 0)}
-  />], 
-  ["https://github.com/", <GitHubIcon 
-  className={selectIconColor(4)} 
-  onMouseOver={(event) => handleMouseOver(event, 4)} 
-  onMouseOut={(event) => handleMouseOver(event, 0)}
-  />]];
+  const arrValues = ["https://www.facebook.com/", 
+  "https://www.instagram.com/", 
+  "https://www.linkedin.com/", 
+  "https://github.com/"];
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         {arrValues.map((text, index) => (
           <Link
-          href={text[0]}
+          href={text}
           target="_blank"
           rel="noopener"
           >
-            {text[1]}
+            <IconMaker index={index + 4} 
+            icon={selectIconColor(index + 1)} 
+            mouseOver={(event) => handleMouseOver(event, index + 1)} 
+            mouseOut={(event) => handleMouseOver(event, 0)} 
+            />
           </Link>
         ))}
       </div>
