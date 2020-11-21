@@ -1,17 +1,17 @@
 import React from "react";
 import { makeStyles, Link, Typography } from "@material-ui/core";
-import { FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from '@material-ui/icons';
+import { styles } from "../../../../styles/styles";
+import IconMaker from './IconMaker.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    width: "16%",
-    minWidth: 200,
-    maxWidth: 240,
-    backgroundColor: "rgb(61, 61, 61)",
-    border: "1px solid black",
+    width: styles.sizes.sidebarDimensions.width,
+    minWidth: styles.sizes.sidebarDimensions.minWidth,
+    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    backgroundColor: styles.colors.darkGray
   },
   container: {
     display: "flex",
@@ -20,17 +20,19 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: "gray",
     textAlign: "center",
-    paddingBottom: 15
+    paddingBottom: styles.sizes.specialThick.spacingThick2
   },
   icon: {
     color: "gray",
-    margin: 5,
-    marginBottom: 15
+    margin: styles.sizes.specialThick.spacingThick1,
+    marginTop: styles.sizes.thickness.thick16,
+    marginBottom: styles.sizes.specialThick.spacingThick2
   },
   icon2: {
     color: "white",
-    margin: 5,
-    marginBottom: 15
+    margin: styles.sizes.specialThick.spacingThick1,
+    marginTop: styles.sizes.thickness.thick16,
+    marginBottom: styles.sizes.specialThick.spacingThick2
   }
 }));
 
@@ -46,53 +48,27 @@ const Footer = () => {
     return (selectedIndex === index) ? classes.icon2 : classes.icon;
   };
 
+  const arrValues = ["https://www.facebook.com/", 
+  "https://www.instagram.com/", 
+  "https://www.linkedin.com/", 
+  "https://github.com/"];
+
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <Link 
-        href="https://www.facebook.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <FacebookIcon 
-          className={selectIconColor(1)} 
-          onMouseOver={(event) => handleMouseOver(event, 1)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://www.instagram.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <InstagramIcon 
-          className={selectIconColor(2)} 
-          onMouseOver={(event) => handleMouseOver(event, 2)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://www.linkedin.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <LinkedInIcon 
-          className={selectIconColor(3)} 
-          onMouseOver={(event) => handleMouseOver(event, 3)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
-        <Link 
-        href="https://github.com/" 
-        target="_blank" 
-        rel="noopener"
-        >
-          <GitHubIcon 
-          className={selectIconColor(4)} 
-          onMouseOver={(event) => handleMouseOver(event, 4)} 
-          onMouseOut={(event) => handleMouseOver(event, 0)}
-          />
-        </Link>
+        {arrValues.map((text, index) => (
+          <Link
+          href={text}
+          target="_blank"
+          rel="noopener"
+          >
+            <IconMaker index={index + 4} 
+            icon={selectIconColor(index + 1)} 
+            mouseOver={(event) => handleMouseOver(event, index + 1)} 
+            mouseOut={(event) => handleMouseOver(event, 0)} 
+            />
+          </Link>
+        ))}
       </div>
       <div className={classes.container}>
         <Typography className={classes.text} variant="body2">
