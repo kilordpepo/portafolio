@@ -19,5 +19,5 @@ const IconMaker = (props) => {
     );
   };
   
-  export default IconMaker;
+export default IconMaker;
   
