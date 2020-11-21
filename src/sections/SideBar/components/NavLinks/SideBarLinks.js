@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     width: styles.sizes.sidebarDimensions.width,
     minWidth: styles.sizes.sidebarDimensions.minWidth,
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
-    backgroundColor: styles.colors.gray1,
+    backgroundColor: styles.colors.darkGray,
     color: "gray",
     textTransform: "uppercase"
   },
