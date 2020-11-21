@@ -1,6 +1,5 @@
 import React from "react";
-import { HomeOutlinedIcon, PersonOutlineOutlinedIcon, MailOutlineOutlinedIcon, NotesOutlinedIcon } from "@material-ui/icons";
-import { FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from '@material-ui/icons';
+import { HomeOutlinedIcon, PersonOutlineOutlinedIcon, MailOutlineOutlinedIcon, NotesOutlinedIcon, FacebookIcon, InstagramIcon, LinkedInIcon, GitHubIcon } from "@material-ui/icons";
 
 const IconMaker = (props) => {
     const selectIcon = (index) => {
