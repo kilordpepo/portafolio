@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Footer, SelectedListItem, ProfilePic } from "./components/index";
-import { styles } from "../../../../styles/styles";
+import { styles } from "../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
