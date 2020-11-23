@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProfilePic = () => {
+const ProfilePic = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
