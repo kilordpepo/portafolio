@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     height: "100%",
     backgroundColor: styles.colors.darkGray,
-    border: `${styles.sizes.thickness.thick1}px solid black`
+    borderRight: `${styles.sizes.thickness.thick1}px solid black`
   },
   overlap: {
     position: "relative",
