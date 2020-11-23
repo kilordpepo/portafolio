@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, Link, Typography } from "@material-ui/core";
 import { styles } from "../../../../styles/styles";
-import IconMaker from './IconMaker.js';
+import IconMaker from '../IconMaker/IconMaker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
