@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { SideBar, Home, AboutMe, Resume, ContactMe, NotFound } from './sections/';
+import { SideBar, Home, AboutMe, Resume, ContactMe, NotFound } from './sections';
 
 export const Routes = () => {
   return (
