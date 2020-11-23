@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Footer from "./components/Footer/SideBarFooter";
-import SelectedListItem from "./components/NavLinks/SideBarLinks";
-import ProfilePic from "./components/ProfilePic/SideBarProfile";
+import { Footer, SelectedListItem, ProfilePic } from "./components/index";
 import { styles } from "../../../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
