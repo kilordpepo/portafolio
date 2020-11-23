@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles, Link, List, ListItem, ListItemIcon, ListItemText, createMuiTheme, ThemeProvider } from "@material-ui/core";
-import { styles } from "../../../../styles/styles";
-import IconMaker from './IconMaker.js';
+import { styles } from "../../styles/styles";
+import IconMaker from '../../sections/SideBar/components/IconMaker/IconMaker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
