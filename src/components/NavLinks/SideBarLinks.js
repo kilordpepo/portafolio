@@ -46,7 +46,7 @@ const SelectedListItem = () => {
   };
 
   const arrValues = [["Home", "./home"], 
-  ["About me", "./aboute-me"], 
+  ["About me", "./about-me"], 
   ["Resume", "./resume"], 
   ["Contact me", "./contact-me"]];
   
