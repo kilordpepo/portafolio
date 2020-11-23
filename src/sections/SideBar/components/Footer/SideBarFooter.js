@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    width: styles.sizes.sidebarDimensions.width,
+    width: "100%",
     minWidth: styles.sizes.sidebarDimensions.minWidth,
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray
@@ -24,15 +24,15 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: "gray",
-    margin: styles.sizes.specialThick.spacingThick1,
-    marginTop: styles.sizes.thickness.thick16,
-    marginBottom: styles.sizes.specialThick.spacingThick2
   },
   icon2: {
     color: "white",
+  },
+  link: {
     margin: styles.sizes.specialThick.spacingThick1,
     marginTop: styles.sizes.thickness.thick16,
-    marginBottom: styles.sizes.specialThick.spacingThick2
+    marginBottom: styles.sizes.specialThick.spacingThick2,
+    height: 24
   }
 }));
 
@@ -61,6 +61,7 @@ const Footer = () => {
           href={text}
           target="_blank"
           rel="noopener"
+          className={classes.link}
           >
             <IconMaker index={index + 4} 
             icon={selectIconColor(index + 1)} 

@@ -25,9 +25,17 @@ const SideBar = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div><ProfilePic alt="Carlos Valero" src="https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg" /></div>
-      <div className={classes.overlap}><SelectedListItem /></div>
-      <div><Footer /></div>
+      <div>
+        <div>
+          <ProfilePic alt="Carlos Valero" src="https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg" />
+        </div>
+        <div className={classes.overlap}>
+          <SelectedListItem />
+        </div>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

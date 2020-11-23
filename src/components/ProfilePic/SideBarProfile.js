@@ -4,14 +4,16 @@ import { styles } from "../../styles/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: styles.sizes.sidebarDimensions.width,
+    width: "100%",
     minWidth: styles.sizes.sidebarDimensions.minWidth,
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray,
   },
   pic: {
     width: "100%",
-    height: styles.sizes.sidebarDimensions.minWidth,
+    height: "100%",
+    minHeight: styles.sizes.sidebarDimensions.minWidth,
+    maxHeight: "auto",
   },
   text: {
     color: "white",

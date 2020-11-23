@@ -5,7 +5,7 @@ import IconMaker from '../../sections/SideBar/components/IconMaker/IconMaker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: styles.sizes.sidebarDimensions.width,
+    width: "100%",
     minWidth: styles.sizes.sidebarDimensions.minWidth,
     maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray,

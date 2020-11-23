@@ -20,9 +20,9 @@ const IconMaker = (props) => {
           : <GitHubIcon className={props.icon} onMouseOver={props.mouseOver} onMouseOut={props.mouseOut} />;
     };
     return (
-            <div>
+            <>
               {selectIcon(props.index)}
-            </div>
+            </>
     );
   };
   
