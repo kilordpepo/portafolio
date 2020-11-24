@@ -60,7 +60,7 @@ const Footer = () => {
           <Link
           href={text}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className={classes.link}
           >
             <IconMaker index={index + 4} 
