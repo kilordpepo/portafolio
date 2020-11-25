@@ -37,8 +37,8 @@ const IconMaker = ({ icon, iconColor, mouseOver, mouseOut }) => {
 };
 
 IconMaker.propTypes = {
-  icon: PropTypes.object.isRequired,
-  index: PropTypes.number.isRequired,
+  icon: PropTypes.string.isRequired,
+  iconColor: PropTypes.object.isRequired,
   mouseOver: PropTypes.func.isRequired,
   mouseOut: PropTypes.func.isRequired
 };
