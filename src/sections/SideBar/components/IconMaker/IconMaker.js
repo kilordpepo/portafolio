@@ -1,30 +1,46 @@
 import React from "react";
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import PersonOutlineOutlinedIcon from "@material-ui/icons/PersonOutlineOutlined";
-import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined";
-import NotesOutlinedIcon from "@material-ui/icons/NotesOutlined";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import PropTypes from 'prop-types';
+import { HomeOutlinedIcon, 
+  PersonOutlineOutlinedIcon, 
+  MailOutlineOutlinedIcon, 
+  NotesOutlinedIcon, 
+  FacebookIcon, 
+  InstagramIcon, 
+  LinkedInIcon, 
+  GitHubIcon, icons } from "./index";
 
-const IconMaker = (props) => {
-    const selectIcon = (index) => {
-      return index === 0 ? <HomeOutlinedIcon className={props.icon} />
-          :  index === 1 ? <PersonOutlineOutlinedIcon className={props.icon} />
-          :  index === 2 ? <NotesOutlinedIcon className={props.icon} />
-          :  index === 3 ? <MailOutlineOutlinedIcon className={props.icon} />
-          :  index === 4 ? <FacebookIcon className={props.icon} onMouseOver={props.mouseOver} onMouseOut={props.mouseOut} />
-          :  index === 5 ? <InstagramIcon className={props.icon} onMouseOver={props.mouseOver} onMouseOut={props.mouseOut} />
-          :  index === 6 ? <LinkedInIcon className={props.icon} onMouseOver={props.mouseOver} onMouseOut={props.mouseOut} />
-          : <GitHubIcon className={props.icon} onMouseOver={props.mouseOver} onMouseOut={props.mouseOut} />;
+const IconMaker = ({ icon, iconColor, mouseOver, mouseOut }) => {
+  const selectIcon = (icon) => {
+    if (icon === icons.home) {
+      return <HomeOutlinedIcon className={iconColor} />;
+    } else if (icon === icons.person) {
+      return <PersonOutlineOutlinedIcon className={iconColor} />;
+    } else if (icon === icons.text) {
+      return <NotesOutlinedIcon className={iconColor} />;
+    } else if (icon === icons.mail) {
+      return <MailOutlineOutlinedIcon className={iconColor} />;
+    } else if (icon === icons.facebook) {
+      return <FacebookIcon className={iconColor} onMouseOver={mouseOver} onMouseOut={mouseOut} />;
+    } else if (icon === icons.instagram) {
+      return <InstagramIcon className={iconColor} onMouseOver={mouseOver} onMouseOut={mouseOut} />;
+    } else if (icon === icons.linkedIn) {
+      return <LinkedInIcon className={iconColor} onMouseOver={mouseOver} onMouseOut={mouseOut} />;
+    } else if (icon === icons.gitHub) {
+      return <GitHubIcon className={iconColor} onMouseOver={mouseOver} onMouseOut={mouseOut} />;
     };
-    return (
-            <>
-              {selectIcon(props.index)}
-            </>
-    );
   };
-  
+  return (
+          <>
+            {selectIcon(icon)}
+          </>
+  );
+};
+
+IconMaker.propTypes = {
+  icon: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  mouseOver: PropTypes.func.isRequired,
+  mouseOut: PropTypes.func.isRequired
+};
+
 export default IconMaker;
-  

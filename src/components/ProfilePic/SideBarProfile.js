@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { makeStyles, Avatar, Typography } from "@material-ui/core";
 import { styles } from "../../styles/styles";
 
@@ -24,15 +25,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProfilePic = (props) => {
+const ProfilePic = ({ alt, src }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Avatar 
-      alt={props.alt} 
+      alt={alt} 
       variant="square" 
       className={classes.pic} 
-      src={props.src}>
+      src={src}>
         Carlos Valero
       </Avatar>
       <Typography 
@@ -45,6 +46,11 @@ const ProfilePic = (props) => {
       </Typography>
     </div>
   );
+};
+
+ProfilePic.propTypes = {
+  alt: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired
 };
 
 export default ProfilePic;

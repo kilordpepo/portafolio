@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { makeStyles, Link, List, ListItem, ListItemIcon, ListItemText, createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { styles } from "../../styles/styles";
 import IconMaker from '../../sections/SideBar/components/IconMaker/IconMaker';
@@ -33,7 +34,7 @@ const theme = createMuiTheme({
   }
 });
 
-const SelectedListItem = () => {
+const SelectedListItem = ({ items }) => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
@@ -45,10 +46,7 @@ const SelectedListItem = () => {
     return (selectedIndex === index) ? classes.icon2 : classes.icon;
   };
 
-  const arrValues = [["Home", "./home"], 
-  ["About me", "./about-me"], 
-  ["Resume", "./resume"], 
-  ["Contact me", "./contact-me"]];
+  const arrValues = items;
   
     return (
       <div className={classes.root}>
@@ -67,7 +65,7 @@ const SelectedListItem = () => {
               key={text[0]}
               >
                 <ListItemIcon>
-                  <IconMaker index={index} icon={selectIconColor(index)} />
+                  <IconMaker icon={text[2]} iconColor={selectIconColor(index)} />
                 </ListItemIcon>
                 <ListItemText primary={text[0]} />
               </ListItem>
@@ -78,5 +76,9 @@ const SelectedListItem = () => {
       </div>
     );
   };
+
+SelectedListItem.propTypes = {
+  items: PropTypes.array.isRequired
+};
 
 export default SelectedListItem;

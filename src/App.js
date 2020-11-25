@@ -1,6 +1,6 @@
-import SideBar from "./sections/SideBar/SideBar";
+import { SideBar } from "./sections/index";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <SideBar />
