@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Footer, SelectedListItem, ProfilePic } from "./components/index";
 import { styles } from "../../styles/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
@@ -27,22 +27,33 @@ const SideBar = () => {
     <div className={classes.root}>
       <div>
         <div>
-          <ProfilePic alt="Carlos Valero" src="https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg" />
+          <ProfilePic
+            alt='Carlos Valero'
+            src='https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg'
+          />
         </div>
         <div className={classes.overlap}>
-          <SelectedListItem items={[["Home", "./home"], 
-          ["About me", "./about-me"], 
-          ["Resume", "./resume"], 
-          ["Contact me", "./contact-me"]]} 
-          iconImage={["home", "person", "text", "mail"]} />
+          <SelectedListItem
+            items={[
+              ["Home", "./home"],
+              ["About me", "./about-me"],
+              ["Resume", "./resume"],
+              ["Contact me", "./contact-me"]
+            ]}
+            iconImage={["home", "person", "text", "mail"]}
+          />
         </div>
       </div>
       <div>
-        <Footer links={["https://www.facebook.com/", 
-        "https://www.instagram.com/", 
-        "https://www.linkedin.com/", 
-        "https://github.com/"]} 
-        iconImage={["facebook", "instagram", "linkedIn", "gitHub"]} />
+        <Footer
+          links={[
+            "https://www.facebook.com/",
+            "https://www.instagram.com/",
+            "https://www.linkedin.com/",
+            "https://github.com/"
+          ]}
+          iconImage={["facebook", "instagram", "linkedIn", "gitHub"]}
+        />
       </div>
     </div>
   );

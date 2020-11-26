@@ -3,7 +3,7 @@ export const styles = {
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
     lightBlue: "rgb(0, 136, 235)",
-    transparentLightBlue: "rgba(0, 136, 235, 0.75)",
+    transparentLightBlue: "rgba(0, 136, 235, 0.75)"
   },
   sizes: {
     thickness: {
@@ -30,17 +30,17 @@ export const styles = {
       thick21: "40px",
       thick22: "42px"
     },
-    specialThick: { //This rule is for really specific numbers. This way, that values do not push the normal ones.
+    specialThick: {
+      //This rule is for really specific numbers. This way, that values do not push the normal ones.
       spacingThick1: "5px",
       spacingThick2: "15px",
       spacingThick3: "25px",
       spacingThick4: "35px"
-      },
+    },
     sidebarDimensions: {
       width: "16%",
       minWidth: "200px",
-      maxWidth: "240px",
+      maxWidth: "240px"
     }
-  },
-
+  }
 };

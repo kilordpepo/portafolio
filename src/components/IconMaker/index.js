@@ -8,11 +8,14 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { ICONS } from "./constants";
 
-export { HomeOutlinedIcon, 
-    PersonOutlineOutlinedIcon, 
-    MailOutlineOutlinedIcon, 
-    NotesOutlinedIcon, 
-    FacebookIcon, 
-    InstagramIcon, 
-    LinkedInIcon, 
-    GitHubIcon, ICONS };
+export {
+  HomeOutlinedIcon,
+  PersonOutlineOutlinedIcon,
+  MailOutlineOutlinedIcon,
+  NotesOutlinedIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  GitHubIcon,
+  ICONS
+};

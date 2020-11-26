@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { makeStyles, Link, Typography } from "@material-ui/core";
 import { styles } from "../../../../styles/styles";
-import { IconMaker } from '../index';
+import { IconMaker } from "../index";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     justifyContent: "center",
@@ -24,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: styles.sizes.specialThick.spacingThick2
   },
   icon: {
-    color: "gray",
+    color: "gray"
   },
   icon2: {
-    color: "white",
+    color: "white"
   },
   link: {
     margin: styles.sizes.specialThick.spacingThick1,
@@ -43,29 +43,33 @@ const Footer = ({ links, iconImage }) => {
 
   const handleMouseOver = (event, index) => setSelectedIndex(index);
 
-  const selectIconColor = index => selectedIndex === index ? classes.icon2 : classes.icon;
+  const selectIconColor = index =>
+    selectedIndex === index ? classes.icon2 : classes.icon;
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         {links.map((text, index) => (
           <Link
-          href={text}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
+            href={text}
+            target='_blank'
+            rel='noopener noreferrer'
+            className={classes.link}
           >
-            <IconMaker icon={iconImage[index]} 
-            iconColor={selectIconColor(index + 1)} 
-            mouseOver={(event) => handleMouseOver(event, index + 1)} 
-            mouseOut={(event) => handleMouseOver(event, 0)} 
+            <IconMaker
+              icon={iconImage[index]}
+              iconColor={selectIconColor(index + 1)}
+              mouseOver={event => handleMouseOver(event, index + 1)}
+              mouseOut={event => handleMouseOver(event, 0)}
             />
           </Link>
         ))}
       </div>
       <div className={classes.container}>
-        <Typography className={classes.text} variant="body2">
-          2020 &copy; Paola & Pepo, C.A.<br />All Rights Reserved.
+        <Typography className={classes.text} variant='body2'>
+          2020 &copy; Paola & Pepo, C.A.
+          <br />
+          All Rights Reserved.
         </Typography>
       </div>
     </div>
