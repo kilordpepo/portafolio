@@ -30,17 +30,19 @@ const SideBar = () => {
           <ProfilePic alt="Carlos Valero" src="https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg" />
         </div>
         <div className={classes.overlap}>
-          <SelectedListItem items={[["Home", "./home", "home"], 
-          ["About me", "./about-me", "person"], 
-          ["Resume", "./resume", "text"],
-          ["Contact me", "./contact-me", "mail"]]} />
+          <SelectedListItem items={[["Home", "./home"], 
+          ["About me", "./about-me"], 
+          ["Resume", "./resume"], 
+          ["Contact me", "./contact-me"]]} 
+          iconImage={["home", "person", "text", "mail"]} />
         </div>
       </div>
       <div>
-        <Footer links={[["https://www.facebook.com/", "facebook"], 
-        ["https://www.instagram.com/", "instagram"], 
-        ["https://www.linkedin.com/", "linkedIn"], 
-        ["https://github.com/", "gitHub"]]} />
+        <Footer links={["https://www.facebook.com/", 
+        "https://www.instagram.com/", 
+        "https://www.linkedin.com/", 
+        "https://github.com/"]} 
+        iconImage={["facebook", "instagram", "linkedIn", "gitHub"]} />
       </div>
     </div>
   );

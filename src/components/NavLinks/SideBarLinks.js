@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { makeStyles, Link, List, ListItem, ListItemIcon, ListItemText, createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { styles } from "../../styles/styles";
-import IconMaker from '../../sections/SideBar/components/IconMaker/IconMaker';
+import IconMaker from '../IconMaker/IconMaker';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,19 +34,13 @@ const theme = createMuiTheme({
   }
 });
 
-const SelectedListItem = ({ items }) => {
+const SelectedListItem = ({ items, iconImage }) => {
   const classes = useStyles();
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleListItemClick = (event, index) => {
-    setSelectedIndex(index);
-  };
+  const handleListItemClick = (event, index) => setSelectedIndex(index);
 
-  const selectIconColor = (index) => {
-    return (selectedIndex === index) ? classes.icon2 : classes.icon;
-  };
-
-  const arrValues = items;
+  const selectIconColor = index => selectedIndex === index ? classes.icon2 : classes.icon;
   
     return (
       <div className={classes.root}>
@@ -56,7 +50,7 @@ const SelectedListItem = ({ items }) => {
             component="nav"
             aria-label="main mailbox folders"
           >
-          {arrValues.map((text, index) => (
+          {items.map((text, index) => (
             <Link href={text[1]} underline="none" color="inherit">
               <ListItem 
               button 
@@ -65,7 +59,7 @@ const SelectedListItem = ({ items }) => {
               key={text[0]}
               >
                 <ListItemIcon>
-                  <IconMaker icon={text[2]} iconColor={selectIconColor(index)} />
+                  <IconMaker icon={iconImage[index]} iconColor={selectIconColor(index)} />
                 </ListItemIcon>
                 <ListItemText primary={text[0]} />
               </ListItem>
@@ -78,7 +72,8 @@ const SelectedListItem = ({ items }) => {
   };
 
 SelectedListItem.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.arrayOf(PropTypes.array),
+  iconImage: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default SelectedListItem;

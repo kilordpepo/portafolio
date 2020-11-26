@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { makeStyles, Link, Typography } from "@material-ui/core";
 import { styles } from "../../../../styles/styles";
@@ -37,31 +37,25 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Footer = ({ links }) => {
+const Footer = ({ links, iconImage }) => {
   const classes = useStyles();
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleMouseOver = (event, index) => {
-    setSelectedIndex(index);
-  };
+  const handleMouseOver = (event, index) => setSelectedIndex(index);
 
-  const selectIconColor = (index) => {
-    return (selectedIndex === index) ? classes.icon2 : classes.icon;
-  };
-
-  const arrValues = links;
+  const selectIconColor = index => selectedIndex === index ? classes.icon2 : classes.icon;
 
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        {arrValues.map((text, index) => (
+        {links.map((text, index) => (
           <Link
-          href={text[0]}
+          href={text}
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
           >
-            <IconMaker icon={text[1]} 
+            <IconMaker icon={iconImage[index]} 
             iconColor={selectIconColor(index + 1)} 
             mouseOver={(event) => handleMouseOver(event, index + 1)} 
             mouseOut={(event) => handleMouseOver(event, 0)} 
@@ -79,7 +73,8 @@ const Footer = ({ links }) => {
 };
 
 Footer.propTypes = {
-  links: PropTypes.array.isRequired
+  links: PropTypes.arrayOf(PropTypes.string),
+  iconImage: PropTypes.arrayOf(PropTypes.string)
 };
 
 export default Footer;

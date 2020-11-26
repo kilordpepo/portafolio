@@ -1,4 +1,4 @@
-export const icons = {
+export const ICONS = {
     home: "home",
     person: "person",
     text: "text",
@@ -7,4 +7,4 @@ export const icons = {
     instagram: "instagram",
     linkedIn: "linkedIn",
     gitHub: "gitHub"
-}
+};
