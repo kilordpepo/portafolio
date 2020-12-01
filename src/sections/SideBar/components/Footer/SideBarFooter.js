@@ -10,8 +10,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     flexDirection: "column",
     width: "100%",
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray
   },
   container: {
@@ -20,14 +18,17 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     color: "gray",
+    fontFamily: "Roboto Condensed, sans-serif",
     textAlign: "center",
     paddingBottom: styles.sizes.specialThick.spacingThick2
   },
   icon: {
-    color: "gray"
+    color: "gray",
+    transition: `color ${styles.transitionDuration.superFast} ease-out`
   },
   icon2: {
-    color: "white"
+    color: "white",
+    transition: `color ${styles.transitionDuration.superFast} ease-out`
   },
   link: {
     margin: styles.sizes.specialThick.spacingThick1,

@@ -16,11 +16,10 @@ import IconMaker from "../IconMaker/IconMaker";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray,
     color: "gray",
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    fontFamily: "Roboto Condensed, sans-serif"
   },
   icon: {
     color: "gray"
@@ -74,7 +73,7 @@ const SelectedListItem = ({ items, iconImage }) => {
                     iconColor={selectIconColor(index)}
                   />
                 </ListItemIcon>
-                <ListItemText primary={text[0]} />
+                <ListItemText disableTypography='true' primary={text[0]} />
               </ListItem>
             </Link>
           ))}
@@ -85,7 +84,7 @@ const SelectedListItem = ({ items, iconImage }) => {
 };
 
 SelectedListItem.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.array),
+  items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
   iconImage: PropTypes.arrayOf(PropTypes.string)
 };
 

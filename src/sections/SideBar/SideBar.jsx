@@ -2,18 +2,21 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Footer, SelectedListItem, ProfilePic } from "./components/index";
 import { styles } from "../../styles/styles";
+import { LINKS } from "../../utils/constants";
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  sidebarCont: {
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "column",
     width: styles.sizes.sidebarDimensions.width,
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     height: "100%",
     backgroundColor: styles.colors.darkGray,
-    borderRight: `${styles.sizes.thickness.thick1} solid black`
+    borderRight: `${styles.sizes.thickness.thick1} solid black`,
+    position: "fixed",
+    top: 0,
+    left: 0,
+    zIndex: "999"
   },
   overlap: {
     position: "relative",
@@ -24,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 const SideBar = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.sidebarCont}>
       <div>
         <div>
           <ProfilePic
@@ -46,12 +49,7 @@ const SideBar = () => {
       </div>
       <div>
         <Footer
-          links={[
-            "https://www.facebook.com/",
-            "https://www.instagram.com/",
-            "https://www.linkedin.com/",
-            "https://github.com/"
-          ]}
+          links={LINKS}
           iconImage={["facebook", "instagram", "linkedIn", "gitHub"]}
         />
       </div>
