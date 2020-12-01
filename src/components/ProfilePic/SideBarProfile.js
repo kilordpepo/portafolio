@@ -6,19 +6,17 @@ import { styles } from "../../styles/styles";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
     backgroundColor: styles.colors.darkGray
   },
   pic: {
     width: "100%",
-    height: "100%",
-    minHeight: styles.sizes.sidebarDimensions.minWidth,
-    maxHeight: "auto"
+    height: "auto"
   },
   text: {
     color: "white",
     backgroundColor: styles.colors.transparentLightBlue,
+    fontFamily: "Merriweather, serif",
+    fontWeight: "bold",
     padding: styles.sizes.specialThick.spacingThick1,
     position: "relative",
     bottom: styles.sizes.thickness.thick22

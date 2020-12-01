@@ -38,9 +38,18 @@ export const styles = {
       spacingThick4: "35px"
     },
     sidebarDimensions: {
-      width: "16%",
+      width: "200px",
       minWidth: "200px",
       maxWidth: "240px"
     }
+  },
+  transitionDuration: {
+    fastest: "40ms",
+    superFast: "70ms",
+    fast: "100",
+    medium: "150ms",
+    slow: "200ms",
+    superSlow: "400ms",
+    slowest: "600ms"
   }
 };
