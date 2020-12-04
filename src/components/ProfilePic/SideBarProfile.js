@@ -19,7 +19,10 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bold",
     padding: styles.sizes.specialThick.spacingThick1,
     position: "relative",
-    bottom: styles.sizes.thickness.thick22
+    bottom: styles.sizes.thickness.thick22,
+    [theme.breakpoints.down("xs")]: {
+      visibility: "hidden"
+    }
   }
 }));
 

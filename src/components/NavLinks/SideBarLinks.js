@@ -42,7 +42,7 @@ const theme = createMuiTheme({
   }
 });
 
-const SelectedListItem = ({ items, iconImage }) => {
+const SelectedListItem = ({ items, iconImage, hide }) => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -60,7 +60,12 @@ const SelectedListItem = ({ items, iconImage }) => {
           aria-label='main mailbox folders'
         >
           {items.map((text, index) => (
-            <Link href={text[1]} underline='none' color='inherit'>
+            <Link
+              href={text[1]}
+              underline='none'
+              color='inherit'
+              onClick={hide}
+            >
               <ListItem
                 button
                 selected={selectedIndex === index}
@@ -85,7 +90,8 @@ const SelectedListItem = ({ items, iconImage }) => {
 
 SelectedListItem.propTypes = {
   items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
-  iconImage: PropTypes.arrayOf(PropTypes.string)
+  iconImage: PropTypes.arrayOf(PropTypes.string),
+  hide: PropTypes.func.isRequired
 };
 
 export default SelectedListItem;

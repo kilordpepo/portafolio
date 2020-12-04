@@ -39,17 +39,23 @@ export const styles = {
     },
     sidebarDimensions: {
       width: "200px",
-      minWidth: "200px",
-      maxWidth: "240px"
+      minWidth: "180px",
+      maxWidth: "250px"
     }
   },
   transitionDuration: {
-    fastest: "40ms",
-    superFast: "70ms",
-    fast: "100",
-    medium: "150ms",
-    slow: "200ms",
-    superSlow: "400ms",
-    slowest: "600ms"
+    fastest: 30,
+    blazingFast: 50,
+    ultraFast: 70,
+    megaFast: 100,
+    superFast: 150,
+    fast: 200,
+    medium: 300,
+    slow: 400,
+    superSlow: 500,
+    megaSlow: 600,
+    ultraSlow: 800,
+    painfullySlow: 1000,
+    slowest: 1400
   }
 };
