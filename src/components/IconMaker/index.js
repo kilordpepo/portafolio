@@ -6,6 +6,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import MenuIcon from "@material-ui/icons/Menu";
 import { ICONS } from "../../utils/constants";
 
 export {
@@ -17,5 +18,6 @@ export {
   InstagramIcon,
   LinkedInIcon,
   GitHubIcon,
+  MenuIcon,
   ICONS
 };

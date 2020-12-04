@@ -24,11 +24,11 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     color: "gray",
-    transition: `color ${styles.transitionDuration.ultraFast}ms ease-out`
+    transition: `color ${styles.transitionDuration.speed70}ms ease-out`
   },
   icon2: {
     color: "white",
-    transition: `color ${styles.transitionDuration.ultraFast}ms ease-out`
+    transition: `color ${styles.transitionDuration.speed70}ms ease-out`
   },
   link: {
     margin: styles.sizes.specialThick.spacingThick1,

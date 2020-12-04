@@ -8,8 +8,12 @@ import {
   Typography,
   makeStyles
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Footer, SelectedListItem, ProfilePic } from "./components/index";
+import {
+  Footer,
+  SelectedListItem,
+  ProfilePic,
+  IconMaker
+} from "./components/index";
 import { styles } from "../../styles/styles";
 import { LINKS } from "../../utils/constants";
 
@@ -27,10 +31,10 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     zIndex: "999",
     [theme.breakpoints.down("xs")]: {
-      overflow: "auto"
-    },
-    [theme.breakpoints.down("sm")]: {
       width: styles.sizes.sidebarDimensions.minWidth
+    },
+    [theme.breakpoints.down("md")]: {
+      overflow: "auto"
     },
     [theme.breakpoints.only("xl")]: {
       width: styles.sizes.sidebarDimensions.maxWidth
@@ -40,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: styles.colors.darkGray
   },
   menuButton: {
-    marginRight: styles.sizes.thickness.thick7
+    position: "absolute"
   },
   overlap: {
     position: "relative",
@@ -48,12 +52,18 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     fontFamily: "Merriweather, serif",
-    fontWeight: "bold",
-    position: "absolute",
-    left: "calc(50% - 67.6095px)"
+    fontWeight: "bold"
+  },
+  centerTitle: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "center"
   },
   drawerPaper: {
-    width: styles.sizes.sidebarDimensions.minWidth
+    width: styles.sizes.sidebarDimensions.minWidth,
+    [theme.breakpoints.only("sm")]: {
+      width: styles.sizes.sidebarDimensions.width
+    }
   }
 }));
 
@@ -102,7 +112,7 @@ const SideBar = () => {
 
   return (
     <div>
-      <Hidden smUp implementation='css'>
+      <Hidden mdUp implementation='css'>
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -112,15 +122,17 @@ const SideBar = () => {
               onClick={handleDrawerToggle}
               className={classes.menuButton}
             >
-              <MenuIcon />
+              <IconMaker icon='burger' />
             </IconButton>
-            <Typography variant='h6' className={classes.text} noWrap>
-              Carlos Valero
-            </Typography>
+            <div className={classes.centerTitle}>
+              <Typography variant='h6' className={classes.text} noWrap>
+                My Portfolio
+              </Typography>
+            </div>
           </Toolbar>
         </AppBar>
       </Hidden>
-      <Hidden smUp implementation='css'>
+      <Hidden mdUp implementation='css'>
         <Drawer
           variant='temporary'
           open={mobileOpen}
@@ -135,7 +147,7 @@ const SideBar = () => {
           {assembledSideBar}
         </Drawer>
       </Hidden>
-      <Hidden xsDown implementation='css'>
+      <Hidden smDown implementation='css'>
         <Drawer variant='permanent' open>
           {assembledSideBar}
         </Drawer>

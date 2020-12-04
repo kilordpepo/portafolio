@@ -6,7 +6,8 @@ export const ICONS = {
   facebook: "facebook",
   instagram: "instagram",
   linkedIn: "linkedIn",
-  gitHub: "gitHub"
+  gitHub: "gitHub",
+  burger: "burger"
 };
 
 export const LINKS = [

@@ -44,18 +44,19 @@ export const styles = {
     }
   },
   transitionDuration: {
-    fastest: 30,
-    blazingFast: 50,
-    ultraFast: 70,
-    megaFast: 100,
-    superFast: 150,
-    fast: 200,
-    medium: 300,
-    slow: 400,
-    superSlow: 500,
-    megaSlow: 600,
-    ultraSlow: 800,
-    painfullySlow: 1000,
-    slowest: 1400
+    speed30: 30,
+    speed50: 50,
+    speed70: 70,
+    speed100: 100,
+    speed150: 150,
+    speed200: 200,
+    speed300: 300,
+    speed400: 400,
+    speed500: 500,
+    speed600: 600,
+    speed800: 800,
+    speed1000: 1000,
+    speed2000: 2000,
+    speed2500: 2500
   }
 };

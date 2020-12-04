@@ -9,6 +9,7 @@ import {
   InstagramIcon,
   LinkedInIcon,
   GitHubIcon,
+  MenuIcon,
   ICONS
 } from "./index";
 
@@ -49,6 +50,7 @@ const IconMaker = ({ icon, iconColor, mouseOver, mouseOut }) => {
           onMouseOut={mouseOut}
         />
       )}
+      {icon === ICONS.burger && <MenuIcon />}
     </>
   );
 };
