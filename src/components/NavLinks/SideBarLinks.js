@@ -10,26 +10,26 @@ import {
   createMuiTheme,
   ThemeProvider
 } from "@material-ui/core";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 import IconMaker from "../IconMaker/IconMaker";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray,
-    color: "gray",
+    color: styles.colors.lightGray,
     textTransform: "uppercase",
-    fontFamily: "Roboto Condensed, sans-serif"
+    fontFamily: styles.fontFamilies.Roboto
   },
   icon: {
-    color: "gray"
+    color: styles.colors.lightGray
   },
   icon2: {
-    color: "white"
+    color: styles.colors.white
   },
   list: {
     "& .Mui-selected": {
-      color: "white"
+      color: styles.colors.white
     }
   }
 }));
@@ -61,7 +61,7 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
         >
           {items.map((text, index) => (
             <Link
-              href={text[1]}
+              href={text.path}
               underline='none'
               color='inherit'
               onClick={hide}
@@ -70,7 +70,7 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
                 button
                 selected={selectedIndex === index}
                 onClick={event => handleListItemClick(event, index)}
-                key={text[0]}
+                key={text.section}
               >
                 <ListItemIcon>
                   <IconMaker
@@ -78,7 +78,7 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
                     iconColor={selectIconColor(index)}
                   />
                 </ListItemIcon>
-                <ListItemText disableTypography='true' primary={text[0]} />
+                <ListItemText disableTypography='true' primary={text.section} />
               </ListItem>
             </Link>
           ))}
@@ -89,7 +89,12 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
 };
 
 SelectedListItem.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      section: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired
+    })
+  ),
   iconImage: PropTypes.arrayOf(PropTypes.string),
   hide: PropTypes.func.isRequired
 };

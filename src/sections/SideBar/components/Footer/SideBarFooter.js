@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles, Link, Typography } from "@material-ui/core";
-import { styles } from "../../../../styles/styles";
+import { styles } from "../../../../styles";
 import { IconMaker } from "../index";
 
 const useStyles = makeStyles(theme => ({
@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    width: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray
   },
   container: {
@@ -17,17 +17,17 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   text: {
-    color: "gray",
-    fontFamily: "Roboto Condensed, sans-serif",
+    color: styles.colors.lightGray,
+    fontFamily: styles.fontFamilies.Roboto,
     textAlign: "center",
     paddingBottom: styles.sizes.specialThick.spacingThick2
   },
   icon: {
-    color: "gray",
+    color: styles.colors.lightGray,
     transition: `color ${styles.transitionDuration.speed70}ms ease-out`
   },
   icon2: {
-    color: "white",
+    color: styles.colors.white,
     transition: `color ${styles.transitionDuration.speed70}ms ease-out`
   },
   link: {

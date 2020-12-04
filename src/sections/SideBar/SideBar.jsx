@@ -8,13 +8,8 @@ import {
   Typography,
   makeStyles
 } from "@material-ui/core";
-import {
-  Footer,
-  SelectedListItem,
-  ProfilePic,
-  IconMaker
-} from "./components/index";
-import { styles } from "../../styles/styles";
+import { Footer, SelectedListItem, ProfilePic, IconMaker } from "./components";
+import { styles } from "../../styles";
 import { LINKS } from "../../utils/constants";
 
 const useStyles = makeStyles(theme => ({
@@ -23,13 +18,13 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     flexDirection: "column",
     width: styles.sizes.sidebarDimensions.width,
-    height: "100%",
+    height: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray,
-    borderRight: `${styles.sizes.thickness.thick1} solid black`,
+    borderRight: `${styles.sizes.thickness.thick1} solid ${styles.colors.black}`,
     position: "fixed",
     top: 0,
     left: 0,
-    zIndex: "999",
+    zIndex: styles.depth.globalLayers.highLevel,
     [theme.breakpoints.down("xs")]: {
       width: styles.sizes.sidebarDimensions.minWidth
     },
@@ -51,11 +46,11 @@ const useStyles = makeStyles(theme => ({
     bottom: styles.sizes.thickness.thick22
   },
   text: {
-    fontFamily: "Merriweather, serif",
+    fontFamily: styles.fontFamilies.Merriweather,
     fontWeight: "bold"
   },
   centerTitle: {
-    width: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
     display: "flex",
     justifyContent: "center"
   },
@@ -91,10 +86,10 @@ const SideBar = () => {
         <div className={classes.overlap}>
           <SelectedListItem
             items={[
-              ["Home", "./home"],
-              ["About me", "./about-me"],
-              ["Resume", "./resume"],
-              ["Contact me", "./contact-me"]
+              { section: "Home", path: "./home" },
+              { section: "About me", path: "./about-me" },
+              { section: "Resume", path: "./resume" },
+              { section: "Contact me", path: "./contact-me" }
             ]}
             iconImage={["home", "person", "text", "mail"]}
             hide={handleHiding}
@@ -141,7 +136,7 @@ const SideBar = () => {
             paper: classes.drawerPaper
           }}
           ModalProps={{
-            keepMounted: true // Better open performance on mobile.
+            keepMounted: true
           }}
         >
           {assembledSideBar}
