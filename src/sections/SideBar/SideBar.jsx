@@ -8,13 +8,8 @@ import {
   Typography,
   makeStyles
 } from "@material-ui/core";
-import {
-  Footer,
-  SelectedListItem,
-  ProfilePic,
-  IconMaker
-} from "./components/index";
-import { styles } from "../../styles/styles";
+import { Footer, SelectedListItem, ProfilePic, IconMaker } from "./components";
+import { styles } from "../../styles";
 import { LINKS } from "../../utils/constants";
 
 const useStyles = makeStyles(theme => ({
@@ -29,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     top: 0,
     left: 0,
-    zIndex: "999",
+    zIndex: styles.depth.globalLayers.highLevel,
     [theme.breakpoints.down("xs")]: {
       width: styles.sizes.sidebarDimensions.minWidth
     },

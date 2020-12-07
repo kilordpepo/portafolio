@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles, Typography } from "@material-ui/core";
-import { styles } from "../../../../styles/styles";
+import { styles } from "../../../../styles";
 
 const useStyles = makeStyles(theme => ({
   text2: {
@@ -36,19 +36,27 @@ const useStyles = makeStyles(theme => ({
 
 const AnimatedRole = ({ messages }) => {
   const classes = useStyles();
-  const [state, setState] = useState({
+  const [animation, setAnimation] = useState({
     text: "",
     message: messages,
-    hide: true,
     start: false
   });
   const [blink, setBlink] = useState(false);
   const speed = styles.transitionDuration.speed70;
 
+  const getCurrentText = currentState => {
+    return currentState.start
+      ? currentState.message.substring(0, currentState.text.length + 1)
+      : currentState.message.substring(0, currentState.text.length + 0);
+  };
+
+  const setCursor = blink => (blink ? classes.cursor2 : classes.cursor1);
+  const hideCursor = start => !start && classes.cursorHidden;
+
   useEffect(() => {
     let timer = "";
     const handleType = () => {
-      setState(cs => ({
+      setAnimation(cs => ({
         ...cs, // cs means currentState
         text: getCurrentText(cs)
       }));
@@ -59,38 +67,28 @@ const AnimatedRole = ({ messages }) => {
   }, [speed]);
 
   useEffect(() => {
-    if (!state.start) {
+    if (!animation.start) {
       let timer = "";
       timer = setTimeout(() => {
-        setState(cs => ({
+        setAnimation(cs => ({
           ...cs,
-          start: true,
-          hide: false
+          start: true
         }));
       }, styles.transitionDuration.speed2500);
       return () => clearTimeout(timer);
-    } else if (state.text === state.message) {
+    } else if (animation.text === animation.message) {
       let timer = "";
       timer = setTimeout(() => {
         setBlink(prev => !prev);
       }, styles.transitionDuration.speed500);
       return () => clearTimeout(timer);
     }
-  }, [state.text, state.message, state.start, blink]);
-
-  const getCurrentText = currentState => {
-    return currentState.start
-      ? currentState.message.substring(0, currentState.text.length + 1)
-      : currentState.message.substring(0, currentState.text.length + 0);
-  };
-
-  const setCursor = blink => (blink ? classes.cursor2 : classes.cursor1);
-  const hideCursor = hide => hide && classes.cursorHidden;
+  }, [animation.text, animation.message, animation.start, blink]);
 
   return (
     <Typography className={classes.text2} variant='h4'>
-      {state.text}
-      <span className={`${setCursor(blink)} ${hideCursor(state.hide)}`} />
+      {animation.text}
+      <span className={`${setCursor(blink)} ${hideCursor(animation.start)}`} />
     </Typography>
   );
 };

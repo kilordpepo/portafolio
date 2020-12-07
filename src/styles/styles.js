@@ -92,5 +92,23 @@ export const styles = {
   fontFamilies: {
     Roboto: "Roboto Condensed, sans-serif",
     Merriweather: "Merriweather, serif"
+  },
+  depth: {
+    globalLayers: {
+      groundLevel: 0,
+      mediumLevel: 100,
+      highLevel: 1000
+    },
+    specificLayers: {
+      firstLevel: 1,
+      secondLevel: 2,
+      thirdLevel: 3,
+      fourthLevel: 4,
+      fifthLevel: 5,
+      sixthLevel: 6,
+      seventhLevel: 7,
+      eighthLevel: 8,
+      ninethLevel: 9
+    }
   }
 };

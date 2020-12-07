@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "../../../../styles/styles";
+import { styles } from "../../../../styles";
 import { makeStyles, Typography, Fade } from "@material-ui/core";
 import AnimatedRole from "../AnimatedRole/HomeRole";
 
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     top: 0,
     left: styles.sizes.sidebarDimensions.width,
     right: 0,
-    zIndex: "3",
+    zIndex: styles.depth.specificLayers.thirdLevel,
     overflow: "hidden",
     [theme.breakpoints.down("sm")]: {
       left: 0

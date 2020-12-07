@@ -1,7 +1,7 @@
 import React from "react";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 import { makeStyles } from "@material-ui/core/styles";
-import { Fullname, BackgroundVid } from "./components/index";
+import { Fullname, BackgroundVid } from "./components";
 
 const useStyles = makeStyles(theme => ({
   home: {

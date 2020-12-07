@@ -10,7 +10,7 @@ import {
   createMuiTheme,
   ThemeProvider
 } from "@material-ui/core";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 import IconMaker from "../IconMaker/IconMaker";
 
 const useStyles = makeStyles(theme => ({

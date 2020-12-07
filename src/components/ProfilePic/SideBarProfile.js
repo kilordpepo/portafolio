@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles, Avatar, Typography } from "@material-ui/core";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
