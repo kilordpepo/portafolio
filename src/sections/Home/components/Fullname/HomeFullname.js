@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "center",
     width: "auto",
-    height: "100%",
+    height: styles.sizes.globalDimensions.percentageFull,
     position: "absolute",
     top: 0,
     left: styles.sizes.sidebarDimensions.width,
@@ -27,24 +27,24 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center"
   },
   text1: {
-    color: "white",
-    fontFamily: "Merriweather, serif",
+    color: styles.colors.white,
+    fontFamily: styles.fontFamilies.Merriweather,
     fontWeight: "bold",
     textTransform: "uppercase",
     [theme.breakpoints.only("xs")]: {
-      fontSize: "2rem"
+      fontSize: styles.sizes.fontSizes.title.breakpoints.xs
     },
     [theme.breakpoints.only("sm")]: {
-      fontSize: "3rem"
+      fontSize: styles.sizes.fontSizes.title.breakpoints.sm
     },
     [theme.breakpoints.only("md")]: {
-      fontSize: "3.5rem"
+      fontSize: styles.sizes.fontSizes.title.breakpoints.md
     },
     [theme.breakpoints.only("lg")]: {
-      fontSize: "3.75rem"
+      fontSize: styles.sizes.fontSizes.title.breakpoints.lg
     },
     [theme.breakpoints.only("xl")]: {
-      fontSize: "6rem"
+      fontSize: styles.sizes.fontSizes.title.breakpoints.xl
     }
   },
   highlightText: {

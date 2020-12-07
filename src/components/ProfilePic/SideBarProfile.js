@@ -5,17 +5,17 @@ import { styles } from "../../styles/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray
   },
   pic: {
-    width: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
     height: "auto"
   },
   text: {
-    color: "white",
+    color: styles.colors.white,
     backgroundColor: styles.colors.transparentLightBlue,
-    fontFamily: "Merriweather, serif",
+    fontFamily: styles.fontFamilies.Merriweather,
     fontWeight: "bold",
     padding: styles.sizes.specialThick.spacingThick1,
     position: "relative",

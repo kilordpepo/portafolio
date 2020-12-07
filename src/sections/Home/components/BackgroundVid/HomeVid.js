@@ -1,7 +1,8 @@
 import React from "react";
-//import { styles } from "../../../../styles/styles";
+import { styles } from "../../../../styles/styles";
 import { makeStyles } from "@material-ui/core";
-import video from "./video/video_03_gaussian_blur.mp4";
+import videoMp4 from "./video/video_03_gaussian_blur.mp4";
+import videoWebm from "./video/video_03_gaussian_blur.webm";
 import image from "./image/image_1.jpg";
 
 const useStyles = makeStyles(theme => ({
@@ -11,25 +12,25 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: "center",
     backgroundSize: "cover",
     position: "absolute",
-    width: "100%",
-    height: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: styles.sizes.globalDimensions.percentageFull,
     top: 0,
     left: 0,
     overflow: "hidden",
     zIndex: "1"
   },
   videoElement: {
-    width: "100%",
-    height: "100%",
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: styles.sizes.globalDimensions.percentageFull,
     objectFit: "cover"
   },
   bg: {
     position: "absolute",
-    background: "black",
+    background: styles.colors.black,
     opacity: "0.5",
     zIndex: 2,
-    width: "100%",
-    height: "100%"
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: styles.sizes.globalDimensions.percentageFull
   }
 }));
 
@@ -44,8 +45,8 @@ const BackgroundVid = ({ vid }) => {
         muted
         loop='loop'
       >
-        <source src={video} type='video/mp4' />
-        <source src='' type='video/webm' />
+        <source src={videoMp4} type='video/mp4' />
+        <source src={videoWebm} type='video/webm' />
         <source src='' type='video/ogg' />
       </video>
     </div>

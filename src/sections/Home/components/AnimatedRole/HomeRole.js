@@ -5,29 +5,29 @@ import { styles } from "../../../../styles/styles";
 
 const useStyles = makeStyles(theme => ({
   text2: {
-    color: "white",
-    fontFamily: "Roboto Condensed, sans-serif",
+    color: styles.colors.white,
+    fontFamily: styles.fontFamilies.Roboto,
     [theme.breakpoints.only("xs")]: {
-      fontSize: "1.1rem"
+      fontSize: styles.sizes.fontSizes.subtitle.breakpoints.xs
     },
     [theme.breakpoints.only("sm")]: {
-      fontSize: "1.7rem"
+      fontSize: styles.sizes.fontSizes.subtitle.breakpoints.sm
     },
     [theme.breakpoints.only("md")]: {
-      fontSize: "2rem"
+      fontSize: styles.sizes.fontSizes.subtitle.breakpoints.md
     },
     [theme.breakpoints.only("lg")]: {
-      fontSize: "2.125rem"
+      fontSize: styles.sizes.fontSizes.subtitle.breakpoints.lg
     },
     [theme.breakpoints.only("xl")]: {
-      fontSize: "3.4rem"
+      fontSize: styles.sizes.fontSizes.subtitle.breakpoints.xl
     }
   },
   cursor1: {
-    borderLeft: `${styles.sizes.thickness.thick2} solid gray`
+    borderLeft: `${styles.sizes.thickness.thick2} solid ${styles.colors.lightGray}`
   },
   cursor2: {
-    borderLeft: `${styles.sizes.thickness.thick2} solid transparent`
+    borderLeft: `${styles.sizes.thickness.thick2} solid ${styles.colors.transparent}`
   },
   cursorHidden: {
     visibility: "hidden"
@@ -39,11 +39,11 @@ const AnimatedRole = ({ messages }) => {
   const [state, setState] = useState({
     text: "",
     message: messages,
-    typingSpeed: styles.transitionDuration.speed70,
     hide: true,
-    start: false,
-    blink: false
+    start: false
   });
+  const [blink, setBlink] = useState(false);
+  const speed = styles.transitionDuration.speed70;
 
   useEffect(() => {
     let timer = "";
@@ -52,11 +52,11 @@ const AnimatedRole = ({ messages }) => {
         ...cs, // cs means currentState
         text: getCurrentText(cs)
       }));
-      timer = setTimeout(handleType, state.typingSpeed);
+      timer = setTimeout(handleType, speed);
     };
     handleType();
     return () => clearTimeout(timer);
-  }, [state.typingSpeed]);
+  }, [speed]);
 
   useEffect(() => {
     if (!state.start) {
@@ -70,14 +70,13 @@ const AnimatedRole = ({ messages }) => {
       }, styles.transitionDuration.speed2500);
       return () => clearTimeout(timer);
     } else if (state.text === state.message) {
-      setTimeout(() => {
-        setState(cs => ({
-          ...cs,
-          blink: !state.blink
-        }));
+      let timer = "";
+      timer = setTimeout(() => {
+        setBlink(prev => !prev);
       }, styles.transitionDuration.speed500);
+      return () => clearTimeout(timer);
     }
-  }, [state.text, state.message, state.start, state.blink]);
+  }, [state.text, state.message, state.start, blink]);
 
   const getCurrentText = currentState => {
     return currentState.start
@@ -91,7 +90,7 @@ const AnimatedRole = ({ messages }) => {
   return (
     <Typography className={classes.text2} variant='h4'>
       {state.text}
-      <span className={`${setCursor(state.blink)} ${hideCursor(state.hide)}`} />
+      <span className={`${setCursor(blink)} ${hideCursor(state.hide)}`} />
     </Typography>
   );
 };

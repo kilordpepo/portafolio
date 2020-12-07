@@ -1,9 +1,13 @@
 export const styles = {
   colors: {
+    white: "rgb(255, 255, 255)",
+    black: "rgb(0, 0, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
+    lightGray: "rgb(128, 128, 128)",
     lightBlue: "rgb(0, 136, 235)",
-    transparentLightBlue: "rgba(0, 136, 235, 0.75)"
+    transparentLightBlue: "rgba(0, 136, 235, 0.75)",
+    transparent: "rgba(0, 0, 0, 0)"
   },
   sizes: {
     thickness: {
@@ -37,6 +41,32 @@ export const styles = {
       spacingThick3: "25px",
       spacingThick4: "35px"
     },
+    fontSizes: {
+      title: {
+        breakpoints: {
+          xl: "6rem",
+          lg: "3.75rem",
+          md: "3.5rem",
+          sm: "3rem",
+          xs: "1.9rem"
+        }
+      },
+      subtitle: {
+        breakpoints: {
+          xl: "3.4rem",
+          lg: "2.125rem",
+          md: "2rem",
+          sm: "1.7rem",
+          xs: "1.045rem"
+        }
+      }
+    },
+    globalDimensions: {
+      percentageFull: "100%",
+      percentageThreeQuarter: "75%",
+      percentageHalf: "50%",
+      percentageQuarter: "25%"
+    },
     sidebarDimensions: {
       width: "200px",
       minWidth: "180px",
@@ -58,5 +88,9 @@ export const styles = {
     speed1000: 1000,
     speed2000: 2000,
     speed2500: 2500
+  },
+  fontFamilies: {
+    Roboto: "Roboto Condensed, sans-serif",
+    Merriweather: "Merriweather, serif"
   }
 };

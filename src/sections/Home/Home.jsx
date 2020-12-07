@@ -1,11 +1,12 @@
 import React from "react";
+import { styles } from "../../styles/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fullname, BackgroundVid } from "./components/index";
 
 const useStyles = makeStyles(theme => ({
   home: {
-    width: "100%",
-    height: "100%"
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: styles.sizes.globalDimensions.percentageFull
   }
 }));
 
