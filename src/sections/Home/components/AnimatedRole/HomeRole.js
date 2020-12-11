@@ -6,7 +6,7 @@ import { styles } from "../../../../styles";
 const useStyles = makeStyles(theme => ({
   text2: {
     color: styles.colors.white,
-    fontFamily: styles.fontFamilies.Roboto,
+    fontFamily: styles.fontFamilies.RobotoCond,
     [theme.breakpoints.only("xs")]: {
       fontSize: styles.sizes.fontSizes.subtitle.breakpoints.xs
     },
