@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   text: {
     color: styles.colors.lightGray,
-    fontFamily: styles.fontFamilies.RobotoCond,
+    fontFamily: styles.fontFamilies.Roboto,
     textAlign: "center",
     paddingBottom: styles.sizes.specialThick.spacingThick2
   },

@@ -90,8 +90,7 @@ export const styles = {
     speed2500: 2500
   },
   fontFamilies: {
-    Roboto: "Roboto, sans-serif",
-    RobotoCond: "Roboto Condensed, sans-serif",
+    Roboto: "Roboto Condensed, sans-serif",
     Merriweather: "Merriweather, serif"
   },
   depth: {

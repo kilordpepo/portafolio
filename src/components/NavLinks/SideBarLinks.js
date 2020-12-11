@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: styles.colors.darkGray,
     color: styles.colors.lightGray,
     textTransform: "uppercase",
-    fontFamily: styles.fontFamilies.RobotoCond
+    fontFamily: styles.fontFamilies.Roboto
   },
   icon: {
     color: styles.colors.lightGray
