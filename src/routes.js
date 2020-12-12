@@ -1,6 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { SideBar, Home, AboutMe, Resume, ContactMe, NotFound } from './sections';
+import React from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import {
+  SideBar,
+  Home,
+  AboutMe,
+  Resume,
+  ContactMe,
+  NotFound
+} from "./sections";
 
 export const Routes = () => {
   return (
@@ -8,19 +15,19 @@ export const Routes = () => {
       <div>
         <SideBar />
         <Switch>
-          <Route exact path="/home">
+          <Route exact path='/home'>
             <Home />
           </Route>
-          <Route exact path="/">
-            <Redirect to="/home" />
+          <Route exact path='/'>
+            <Redirect to='/home' />
           </Route>
-          <Route exact path="/about-me">
+          <Route exact path='/about-me'>
             <AboutMe />
           </Route>
-          <Route exact path="/resume">
+          <Route exact path='/resume'>
             <Resume />
           </Route>
-          <Route exact path="/contact-me">
+          <Route exact path='/contact-me'>
             <ContactMe />
           </Route>
           <Route>

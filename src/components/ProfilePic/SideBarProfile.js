@@ -1,24 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles, Avatar, Typography } from "@material-ui/core";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    width: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray
   },
   pic: {
-    width: "100%",
-    height: "100%",
-    minHeight: styles.sizes.sidebarDimensions.minWidth,
-    maxHeight: "auto"
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: "auto"
   },
   text: {
-    color: "white",
+    color: styles.colors.white,
     backgroundColor: styles.colors.transparentLightBlue,
+    fontFamily: styles.fontFamilies.Merriweather,
+    fontWeight: "bold",
     padding: styles.sizes.specialThick.spacingThick1,
     position: "relative",
     bottom: styles.sizes.thickness.thick22

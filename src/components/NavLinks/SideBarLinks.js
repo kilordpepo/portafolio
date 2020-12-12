@@ -10,27 +10,26 @@ import {
   createMuiTheme,
   ThemeProvider
 } from "@material-ui/core";
-import { styles } from "../../styles/styles";
+import { styles } from "../../styles";
 import IconMaker from "../IconMaker/IconMaker";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
-    minWidth: styles.sizes.sidebarDimensions.minWidth,
-    maxWidth: styles.sizes.sidebarDimensions.maxWidth,
+    width: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray,
-    color: "gray",
-    textTransform: "uppercase"
+    color: styles.colors.lightGray,
+    textTransform: "uppercase",
+    fontFamily: styles.fontFamilies.RobotoCond
   },
   icon: {
-    color: "gray"
+    color: styles.colors.lightGray
   },
   icon2: {
-    color: "white"
+    color: styles.colors.white
   },
   list: {
     "& .Mui-selected": {
-      color: "white"
+      color: styles.colors.white
     }
   }
 }));
@@ -43,7 +42,7 @@ const theme = createMuiTheme({
   }
 });
 
-const SelectedListItem = ({ items, iconImage }) => {
+const SelectedListItem = ({ items, iconImage, hide }) => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -61,12 +60,17 @@ const SelectedListItem = ({ items, iconImage }) => {
           aria-label='main mailbox folders'
         >
           {items.map((text, index) => (
-            <Link href={text[1]} underline='none' color='inherit'>
+            <Link
+              href={text.path}
+              underline='none'
+              color='inherit'
+              onClick={hide}
+            >
               <ListItem
                 button
                 selected={selectedIndex === index}
                 onClick={event => handleListItemClick(event, index)}
-                key={text[0]}
+                key={text.section}
               >
                 <ListItemIcon>
                   <IconMaker
@@ -74,7 +78,7 @@ const SelectedListItem = ({ items, iconImage }) => {
                     iconColor={selectIconColor(index)}
                   />
                 </ListItemIcon>
-                <ListItemText primary={text[0]} />
+                <ListItemText disableTypography='true' primary={text.section} />
               </ListItem>
             </Link>
           ))}
@@ -85,8 +89,14 @@ const SelectedListItem = ({ items, iconImage }) => {
 };
 
 SelectedListItem.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.array),
-  iconImage: PropTypes.arrayOf(PropTypes.string)
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      section: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired
+    })
+  ),
+  iconImage: PropTypes.arrayOf(PropTypes.string),
+  hide: PropTypes.func.isRequired
 };
 
 export default SelectedListItem;
