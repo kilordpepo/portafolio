@@ -2,6 +2,7 @@ export const styles = {
   colors: {
     white: "rgb(255, 255, 255)",
     black: "rgb(0, 0, 0)",
+    red: "rgb(220, 40, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
     lightGray: "rgb(128, 128, 128)",
@@ -32,7 +33,11 @@ export const styles = {
       thick19: "36px",
       thick20: "38px",
       thick21: "40px",
-      thick22: "42px"
+      thick22: "42px",
+      thick23: "44px",
+      thick24: "46px",
+      thick25: "48px",
+      thick26: "50px"
     },
     specialThick: {
       //This rule is for really specific numbers. This way, that values do not push the normal ones.
@@ -59,18 +64,29 @@ export const styles = {
           sm: "1.7rem",
           xs: "1.045rem"
         }
-      }
+      },
+      helperText: "0.75rem"
     },
     globalDimensions: {
       percentageFull: "100%",
-      percentageThreeQuarter: "75%",
+      percentageNineTenths: "90%",
+      percentageThreeQuarters: "75%",
       percentageHalf: "50%",
+      percentageThird: "33%",
       percentageQuarter: "25%"
     },
     sidebarDimensions: {
       width: "200px",
       minWidth: "180px",
       maxWidth: "250px"
+    },
+    contactMeDimensions: {
+      maxWidth: "1024px",
+      spacing1: "60px",
+      spacing2: "70px",
+      spacing3: "80px",
+      spacing4: "100px",
+      spacing5: "150px"
     }
   },
   transitionDuration: {
@@ -92,7 +108,12 @@ export const styles = {
   fontFamilies: {
     Roboto: "Roboto, sans-serif",
     RobotoCond: "Roboto Condensed, sans-serif",
-    Merriweather: "Merriweather, serif"
+    Merriweather: "Merriweather, serif",
+    Yesteryear: "Yesteryear",
+    Rye: "Rye",
+    Ewert: "Ewert",
+    Berkshire: "Berkshire Swash",
+    Euphoria: "Euphoria Script"
   },
   depth: {
     globalLayers: {

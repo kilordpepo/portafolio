@@ -1,11 +1,22 @@
-import { SideBar } from "./sections/index";
-import Home from "./sections/Home/Home";
+import { SideBar, Home, ContactMe } from "./sections";
+import { makeStyles } from "@material-ui/core/styles";
+import { styles } from "./styles";
+
+const useStyles = makeStyles(theme => ({
+  App: {
+    position: "absolute",
+    width: styles.sizes.globalDimensions.percentageFull,
+    height: styles.sizes.globalDimensions.percentageFull,
+    zIndex: styles.depth.globalLayers.groundLevel
+  }
+}));
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <div className='App'>
+    <div className={classes.App}>
       <SideBar />
-      <Home />
+      <ContactMe />
     </div>
   );
 };
