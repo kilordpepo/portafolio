@@ -25,12 +25,20 @@ const useStyles = makeStyles(theme => ({
     }
   },
   contactMessage: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: styles.sizes.globalDimensions.percentageNineTenths,
     width: styles.sizes.globalDimensions.percentageNineTenths,
-    maxWidth: styles.sizes.contactMeDimensions.maxWidth,
+    maxWidth: styles.sizes.globalDimensions.sections.mediumSize,
+    maxHeight: styles.sizes.globalDimensions.sections.mediumSize,
     margin: "0 auto",
-    padding: `${styles.sizes.thickness.thick26} 0 ${styles.sizes.contactMeDimensions.spacing1} 0`,
+    padding: `${styles.sizes.thickness.thick21} 0 ${styles.sizes.thickness.thick11} 0`,
     [theme.breakpoints.down("sm")]: {
-      paddingTop: styles.sizes.contactMeDimensions.spacing3
+      paddingTop: styles.sizes.largeThickness.thick3
+    },
+    [theme.breakpoints.up("xl")]: {
+      maxWidth: styles.sizes.globalDimensions.sections.largeSize
     }
   },
   title: {
@@ -38,16 +46,19 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: styles.sizes.specialThick.spacingThick1
   },
   contactForm: {
-    marginTop: styles.sizes.contactMeDimensions.spacing3
+    marginTop: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: styles.sizes.largeThickness.thick1
+    }
   },
   centerCont: {
     textAlign: "center",
-    margin: `0 ${styles.sizes.contactMeDimensions.spacing5}`,
+    margin: `0 ${styles.sizes.largeThickness.thick10}`,
     [theme.breakpoints.down("sm")]: {
       margin: 0
     },
     [theme.breakpoints.only("md")]: {
-      margin: `0 ${styles.sizes.contactMeDimensions.spacing2}`
+      margin: `0 ${styles.sizes.largeThickness.thick2}`
     }
   }
 }));
@@ -58,7 +69,15 @@ const ContactMe = () => {
     <div className={classes.contactSection}>
       <div className={classes.contactMessage}>
         <div className={classes.title}>
-          <SectionTitle title='Contact me.' iconImage='mail' weight='bold' />
+          <SectionTitle
+            title='Contact me.'
+            iconImage='mail'
+            weight='bold'
+            styling={{
+              fontFamily: styles.fontFamilies.Merriweather,
+              fontWeight: "bold"
+            }}
+          />
         </div>
         <div className={classes.contactForm}>
           <div className={classes.centerCont}>

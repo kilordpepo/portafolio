@@ -39,6 +39,18 @@ export const styles = {
       thick25: "48px",
       thick26: "50px"
     },
+    largeThickness: {
+      thick1: "60px",
+      thick2: "70px",
+      thick3: "80px",
+      thick4: "90px",
+      thick5: "100px",
+      thick6: "110px",
+      thick7: "120px",
+      thick8: "130px",
+      thick9: "140px",
+      thick10: "150px"
+    },
     specialThick: {
       //This rule is for really specific numbers. This way, that values do not push the normal ones.
       spacingThick1: "5px",
@@ -73,20 +85,17 @@ export const styles = {
       percentageThreeQuarters: "75%",
       percentageHalf: "50%",
       percentageThird: "33%",
-      percentageQuarter: "25%"
+      percentageQuarter: "25%",
+      sections: {
+        largeSize: "1300px",
+        mediumSize: "1024px",
+        smallSize: "800px"
+      }
     },
     sidebarDimensions: {
       width: "200px",
       minWidth: "180px",
       maxWidth: "250px"
-    },
-    contactMeDimensions: {
-      maxWidth: "1024px",
-      spacing1: "60px",
-      spacing2: "70px",
-      spacing3: "80px",
-      spacing4: "100px",
-      spacing5: "150px"
     }
   },
   transitionDuration: {

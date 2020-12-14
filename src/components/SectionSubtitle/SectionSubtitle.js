@@ -36,13 +36,13 @@ const SectionSubtitle = ({ subtitleText, size, borderColor }) => {
       <div
         className={classes.subtitleUnderline}
         style={{
-          borderColor: borderColor
+          borderColor
         }}
       >
         <div
           className={classes.subUnderline}
           style={{
-            borderColor: borderColor
+            borderColor
           }}
         >
           <Typography

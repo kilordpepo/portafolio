@@ -6,7 +6,7 @@ import { IconMaker } from "../index";
 
 const useStyles = makeStyles(theme => ({
   contactInfo: {
-    marginTop: styles.sizes.contactMeDimensions.spacing4,
+    marginTop: styles.sizes.thickness.thick16,
     textAlign: "center"
   },
   contactCard: {

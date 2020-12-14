@@ -4,6 +4,7 @@ import { styles } from "./styles";
 
 const useStyles = makeStyles(theme => ({
   App: {
+    background: styles.colors.mediumGray,
     position: "absolute",
     width: styles.sizes.globalDimensions.percentageFull,
     height: styles.sizes.globalDimensions.percentageFull,
