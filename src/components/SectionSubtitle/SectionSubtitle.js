@@ -8,8 +8,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    color: styles.colors.white,
-    margin: `0 ${styles.sizes.specialThick.spacingThick2}`
+    color: styles.colors.white
   },
   subtitleUnderline: {
     position: "relative",
@@ -29,14 +28,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SectionSubtitle = ({ subtitleText, size, borderColor }) => {
+const SectionSubtitle = ({
+  subtitleText,
+  size,
+  borderColor,
+  padding,
+  alignItems
+}) => {
   const classes = useStyles();
   return (
-    <div className={classes.subtitleCont}>
+    <div className={classes.subtitleCont} style={{ alignItems }}>
       <div
         className={classes.subtitleUnderline}
         style={{
-          borderColor
+          borderColor,
+          padding
         }}
       >
         <div
@@ -61,7 +67,8 @@ const SectionSubtitle = ({ subtitleText, size, borderColor }) => {
 SectionSubtitle.propTypes = {
   subtitleText: PropTypes.string.isRequired,
   size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  borderColor: PropTypes.string
+  borderColor: PropTypes.string,
+  alignItems: PropTypes.string
 };
 
 export default SectionSubtitle;

@@ -9,6 +9,8 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    borderBottom: `${styles.sizes.thickness.thick1} dashed ${styles.colors.lightGray}`,
+    paddingBottom: styles.sizes.thickness.thick2,
     height: styles.sizes.globalDimensions.percentageFull
   },
   titleStyle: {

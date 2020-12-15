@@ -41,10 +41,6 @@ const useStyles = makeStyles(theme => ({
       maxWidth: styles.sizes.globalDimensions.sections.largeSize
     }
   },
-  title: {
-    borderBottom: `${styles.sizes.thickness.thick1} dashed ${styles.colors.lightGray}`,
-    paddingBottom: styles.sizes.specialThick.spacingThick1
-  },
   contactForm: {
     marginTop: 40,
     [theme.breakpoints.down("sm")]: {
@@ -68,7 +64,7 @@ const ContactMe = () => {
   return (
     <div className={classes.contactSection}>
       <div className={classes.contactMessage}>
-        <div className={classes.title}>
+        <div>
           <SectionTitle
             title='Contact me.'
             iconImage='mail'
