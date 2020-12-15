@@ -4,6 +4,7 @@ import InputTextField from "../../../components/InputTextField/InputTextField";
 import IconMaker from "../../../components/IconMaker/IconMaker";
 import ContactInfo from "./ContactInfo/ContactInfo";
 import AssembledForm from "./AssembledForm/AssembledForm";
+import StyledButton from "../../../components/StyledButton/StyledButton";
 
 export {
   SectionTitle,
@@ -11,5 +12,6 @@ export {
   InputTextField,
   IconMaker,
   ContactInfo,
-  AssembledForm
+  AssembledForm,
+  StyledButton
 };

@@ -1,8 +1,8 @@
 import React from "react";
 import { styles } from "../../../../styles";
-import { makeStyles, withStyles, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { useFormik } from "formik";
-import { InputTextField } from "../index";
+import { InputTextField, StyledButton } from "../index";
 
 const useStyles = makeStyles(theme => ({
   inputCont: {
@@ -29,25 +29,6 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center"
   }
 }));
-
-const SubmitButton = withStyles(theme => ({
-  root: {
-    color: styles.colors.lightBlue,
-    transition: `color ${styles.transitionDuration.speed200}ms`,
-    "&:hover": {
-      color: styles.colors.black,
-      backgroundColor: styles.colors.lightBlue,
-      transition: `color ${styles.transitionDuration.speed200}ms`
-    },
-    "&.MuiButton-outlined": {
-      border: `${styles.sizes.thickness.thick2} solid ${styles.colors.lightBlue}`,
-      borderRadius: 0
-    },
-    "& .MuiButton-label": {
-      fontWeight: "bold"
-    }
-  }
-}))(Button);
 
 const validate = values => {
   const errors = {};
@@ -132,9 +113,7 @@ const AssembledForm = () => {
         />
       </div>
       <div className={classes.buttonCont}>
-        <SubmitButton variant='outlined' type='submit'>
-          Send message
-        </SubmitButton>
+        <StyledButton buttonText='Send message' type='submit' />
       </div>
     </form>
   );
