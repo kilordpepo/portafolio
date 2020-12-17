@@ -2,9 +2,13 @@ export const styles = {
   colors: {
     white: "rgb(255, 255, 255)",
     black: "rgb(0, 0, 0)",
+    green: "rgb(0, 190, 0)",
+    lightGreen: "rgb(0, 224, 0)",
+    red: "rgb(220, 40, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
     lightGray: "rgb(128, 128, 128)",
+    silver: "rgb(220, 220, 220)",
     lightBlue: "rgb(0, 136, 235)",
     transparentLightBlue: "rgba(0, 136, 235, 0.75)",
     transparent: "rgba(0, 0, 0, 0)"
@@ -32,7 +36,23 @@ export const styles = {
       thick19: "36px",
       thick20: "38px",
       thick21: "40px",
-      thick22: "42px"
+      thick22: "42px",
+      thick23: "44px",
+      thick24: "46px",
+      thick25: "48px",
+      thick26: "50px"
+    },
+    largeThickness: {
+      thick1: "60px",
+      thick2: "70px",
+      thick3: "80px",
+      thick4: "90px",
+      thick5: "100px",
+      thick6: "110px",
+      thick7: "120px",
+      thick8: "130px",
+      thick9: "140px",
+      thick10: "150px"
     },
     specialThick: {
       //This rule is for really specific numbers. This way, that values do not push the normal ones.
@@ -52,6 +72,7 @@ export const styles = {
         }
       },
       subtitle: {
+        section: "1.375rem",
         breakpoints: {
           xl: "3.4rem",
           lg: "2.125rem",
@@ -59,13 +80,21 @@ export const styles = {
           sm: "1.7rem",
           xs: "1.045rem"
         }
-      }
+      },
+      helperText: "0.75rem"
     },
     globalDimensions: {
       percentageFull: "100%",
-      percentageThreeQuarter: "75%",
+      percentageNineTenths: "90%",
+      percentageThreeQuarters: "75%",
       percentageHalf: "50%",
-      percentageQuarter: "25%"
+      percentageThird: "33%",
+      percentageQuarter: "25%",
+      sections: {
+        largeSize: "1300px",
+        mediumSize: "1024px",
+        smallSize: "800px"
+      }
     },
     sidebarDimensions: {
       width: "200px",
@@ -92,7 +121,12 @@ export const styles = {
   fontFamilies: {
     Roboto: "Roboto, sans-serif",
     RobotoCond: "Roboto Condensed, sans-serif",
-    Merriweather: "Merriweather, serif"
+    Merriweather: "Merriweather, serif",
+    Yesteryear: "Yesteryear",
+    Rye: "Rye",
+    Ewert: "Ewert",
+    Berkshire: "Berkshire Swash",
+    Euphoria: "Euphoria Script"
   },
   depth: {
     globalLayers: {
