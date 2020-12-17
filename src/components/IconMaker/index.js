@@ -10,6 +10,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SendIcon from "@material-ui/icons/Send";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import PhoneEnabledIcon from "@material-ui/icons/PhoneEnabled";
+import LaptopMacIcon from "@material-ui/icons/LaptopMac";
+import SettingsIcon from "@material-ui/icons/Settings";
+import StorageIcon from "@material-ui/icons/Storage";
 import { ICONS } from "../../utils/constants";
 
 export {
@@ -25,5 +28,8 @@ export {
   SendIcon,
   LocationOnIcon,
   PhoneEnabledIcon,
+  LaptopMacIcon,
+  SettingsIcon,
+  StorageIcon,
   ICONS
 };
