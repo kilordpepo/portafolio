@@ -2,10 +2,13 @@ export const styles = {
   colors: {
     white: "rgb(255, 255, 255)",
     black: "rgb(0, 0, 0)",
+    green: "rgb(0, 190, 0)",
+    lightGreen: "rgb(0, 224, 0)",
     red: "rgb(220, 40, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
     lightGray: "rgb(128, 128, 128)",
+    silver: "rgb(220, 220, 220)",
     lightBlue: "rgb(0, 136, 235)",
     transparentLightBlue: "rgba(0, 136, 235, 0.75)",
     transparent: "rgba(0, 0, 0, 0)"
@@ -69,6 +72,7 @@ export const styles = {
         }
       },
       subtitle: {
+        section: "1.375rem",
         breakpoints: {
           xl: "3.4rem",
           lg: "2.125rem",

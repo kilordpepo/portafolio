@@ -60,7 +60,13 @@ const validate = values => {
 
 const AssembledForm = () => {
   const classes = useStyles();
-  const formik = useFormik({
+  const {
+    values: { name: nameValue, email: emailValue, text: textValue },
+    touched: { name: touchedName, email: touchedEmail, text: touchedText },
+    errors: { name: errorsName, email: errorsEmail, text: errorsText },
+    handleSubmit,
+    handleChange
+  } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -74,7 +80,7 @@ const AssembledForm = () => {
   return (
     <form
       className={classes.inputCont}
-      onSubmit={formik.handleSubmit}
+      onSubmit={handleSubmit}
       autoComplete='off'
     >
       <div className={classes.profileInput}>
@@ -82,10 +88,10 @@ const AssembledForm = () => {
           label='Name'
           id='name'
           name='name'
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          error={formik.touched.name && Boolean(formik.errors.name)}
-          helperText={formik.touched.name && formik.errors.name}
+          value={nameValue}
+          onChange={handleChange}
+          error={touchedName && Boolean(errorsName)}
+          helperText={touchedName && errorsName}
         />
       </div>
       <div className={classes.profileInput}>
@@ -93,10 +99,10 @@ const AssembledForm = () => {
           label='Email'
           id='email'
           name='email'
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
+          value={emailValue}
+          onChange={handleChange}
+          error={touchedEmail && Boolean(errorsEmail)}
+          helperText={touchedEmail && errorsEmail}
         />
       </div>
       <div className={classes.textareaInput}>
@@ -104,10 +110,10 @@ const AssembledForm = () => {
           label='How can we help you?'
           id='text'
           name='text'
-          value={formik.values.text}
-          onChange={formik.handleChange}
-          error={formik.touched.text && Boolean(formik.errors.text)}
-          helperText={formik.touched.text && formik.errors.text}
+          value={textValue}
+          onChange={handleChange}
+          error={touchedText && Boolean(errorsText)}
+          helperText={touchedText && errorsText}
           size={6}
           textarea
         />

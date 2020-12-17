@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { styles } from "../../styles";
-import { makeStyles, withStyles, Button } from "@material-ui/core";
+import { withStyles, Button } from "@material-ui/core";
 
 const CssButton = withStyles(theme => ({
   root: {
@@ -27,6 +28,11 @@ const StyledButton = ({ buttonText, type }) => {
       {buttonText}
     </CssButton>
   );
+};
+
+StyledButton.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+  type: PropTypes.string
 };
 
 export default StyledButton;

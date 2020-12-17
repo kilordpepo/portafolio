@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   subtitle: {
     fontFamily: styles.fontFamilies.Merriweather,
+    fontSize: styles.sizes.fontSizes.subtitle.section,
     fontWeight: "bold"
   }
 }));
