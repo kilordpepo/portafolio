@@ -110,7 +110,7 @@ const AboutMe = () => {
             <ListMaker
               list={[
                 { title: "Name", value: "Carlos Valero" },
-                { title: "Age", value: "26 years" },
+                { title: "Age", value: "25 years" },
                 { title: "Residence", value: "Zaragoza, Spain" },
                 { title: "Address", value: "Under your bed" },
                 { title: "Email", value: "kilordpepo@gmail.com" },
