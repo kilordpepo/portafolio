@@ -6,8 +6,8 @@ import { makeStyles, Chip } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
   listWrapper: {
     listStyle: "none",
-    padding: "0",
-    margin: "0"
+    padding: 0,
+    margin: 0
   },
   listItem: {
     marginBottom: styles.sizes.thickness.thick8
@@ -42,10 +42,10 @@ const ListMaker = ({ list }) => {
   return (
     <ul className={classes.listWrapper}>
       {list.map(text => (
-        <li className={classes.listItem}>
+        <li className={classes.listItem} key={`${text.title}-item`}>
           <span className={classes.listTitle}>{text.title}</span>
           <span className={classes.listColon}> : </span>
-          {!text.chip && text.value}
+          {!text.chip && <span>{text.value}</span>}
           {text.chip && (
             <Chip
               label={text.value}

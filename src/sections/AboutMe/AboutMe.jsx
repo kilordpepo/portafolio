@@ -8,7 +8,7 @@ import {
   ServicesInfo
 } from "./components";
 import { makeStyles, Typography, Link } from "@material-ui/core";
-import file from "../Home/components/BackgroundVid/image/image_1.jpg"; //Temporal file to test download functionality
+import file from "./file/EnglishCV.pdf";
 
 const useStyles = makeStyles(theme => ({
   aboutSection: {
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     padding: `0 ${styles.sizes.specialThick.spacingThick2}`,
-    minWidth: "280px",
+    minWidth: styles.sizes.largeThickness.thick24,
     [theme.breakpoints.down("md")]: {
       marginTop: styles.sizes.thickness.thick16
     },
@@ -86,18 +86,18 @@ const AboutMe = () => {
               padding={0}
             />
             <Typography variant='body1' className={classes.paragraph}>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit velit et
-              aptent suspendisse, mus dui sodales laoreet ac integer purus nisl
-              sem ante, hendrerit a lobortis risus donec tincidunt porttitor
-              nascetur diam vestibulum.
+              Full-Stack developer with 4 years of experience developing web
+              applications, and some mobile apps, interested in learning and
+              obtaining experience in the process.
             </Typography>
             <Typography variant='body1' className={classes.paragraph}>
-              Fringilla vestibulum ridiculus ut vitae penatibus eget hac ligula
-              praesent potenti, nostra et ullamcorper tristique cras blandit
-              volutpat sapien in, magna mattis nisi curae enim sociis etiam
-              vehicula diam. Fames nisi dapibus etiam sagittis per dignissim
-              eleifend, nostra euismod integer nascetur non commodo sodales
-              lobortis, primis conubia netus ligula nullam interdum.
+              Colleagues know me as a committed developer who can always be
+              trusted to come up with a new approach. But I know that the
+              client's business comes first, and I never try to impose my ideas
+              on others. Instead, I spend a lot of time understanding the
+              business and the audience before suggesting ideas. I can (and
+              often do) work well alone, but I'm at my best collaborating with
+              others.
             </Typography>
           </div>
           <div className={classes.list}>
@@ -122,7 +122,7 @@ const AboutMe = () => {
               <Link
                 href={file}
                 underline='none'
-                download='Resume'
+                download='EnglishCV'
                 target='_blank'
               >
                 <StyledButton buttonText='Download Resume' />
@@ -135,22 +135,25 @@ const AboutMe = () => {
           <ServicesInfo
             services={[
               {
+                key: "Frontend",
                 icon: "laptop",
                 label: "Front-end Development",
                 text:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit volutpat, non scelerisque ridiculus."
+                  "I'm capable of developing web applications with different frameworks that fullfill your project requirements."
               },
               {
+                key: "Backend",
                 icon: "engine",
                 label: "Back-end Development",
                 text:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit et, ad pharetra non."
+                  "REST services, micro services, serverless, PostgreSQL, MySQL, you name it and I bet I have worked on it. I'm capable of creating services that will work as wanted for you."
               },
               {
+                key: "Fullstack",
                 icon: "data",
                 label: "Full Stack Development",
                 text:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit interdum, ligula vivamus quisque."
+                  "If you need me to do the whole process then let's do it, from creating robust backend logic to responsive web pages to display it, I can do it."
               }
             ]}
           />

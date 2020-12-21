@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: "bold"
   },
   serviceText: {
-    color: styles.colors.silver
+    color: styles.colors.silver,
+    marginTop: styles.sizes.thickness.thick6
   }
 }));
 
@@ -46,7 +47,7 @@ const ServicesInfo = ({ services }) => {
   return (
     <div className={classes.servicesContainer}>
       {services.map(service => (
-        <div className={classes.serviceCard}>
+        <div className={classes.serviceCard} key={`${service.key}-item`}>
           <IconMaker
             icon={service.icon}
             sizeNum={60}

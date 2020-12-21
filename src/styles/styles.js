@@ -10,6 +10,7 @@ export const styles = {
     lightGray: "rgb(128, 128, 128)",
     silver: "rgb(220, 220, 220)",
     lightBlue: "rgb(0, 136, 235)",
+    mediumBlue: "rgb(0, 116, 200)",
     transparentLightBlue: "rgba(0, 136, 235, 0.75)",
     transparent: "rgba(0, 0, 0, 0)"
   },
@@ -52,7 +53,20 @@ export const styles = {
       thick7: "120px",
       thick8: "130px",
       thick9: "140px",
-      thick10: "150px"
+      thick10: "150px",
+      thick12: "160px",
+      thick13: "170px",
+      thick14: "180px",
+      thick15: "190px",
+      thick16: "200px",
+      thick17: "210px",
+      thick18: "220px",
+      thick19: "230px",
+      thick20: "240px",
+      thick21: "250px",
+      thick22: "260px",
+      thick23: "270px",
+      thick24: "280px"
     },
     specialThick: {
       //This rule is for really specific numbers. This way, that values do not push the normal ones.

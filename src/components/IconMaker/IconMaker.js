@@ -99,8 +99,8 @@ const IconMaker = ({ icon, iconColor, sizeNum, mouseOver, mouseOut }) => {
 IconMaker.propTypes = {
   icon: PropTypes.string.isRequired,
   iconColor: PropTypes.objectOf(PropTypes.string),
-  mouseOver: PropTypes.func.isRequired,
-  mouseOut: PropTypes.func.isRequired,
+  mouseOver: PropTypes.func,
+  mouseOut: PropTypes.func,
   sizeNum: PropTypes.number
 };
 
