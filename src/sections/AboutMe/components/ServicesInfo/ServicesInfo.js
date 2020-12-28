@@ -68,6 +68,7 @@ const ServicesInfo = ({ services }) => {
 ServicesInfo.propTypes = {
   services: PropTypes.arrayOf(
     PropTypes.shape({
+      key: PropTypes.string.isRequired,
       icon: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired

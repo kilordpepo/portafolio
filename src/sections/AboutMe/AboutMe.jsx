@@ -112,7 +112,6 @@ const AboutMe = () => {
                 { title: "Name", value: "Carlos Valero" },
                 { title: "Age", value: "25 years" },
                 { title: "Residence", value: "Zaragoza, Spain" },
-                { title: "Address", value: "Under your bed" },
                 { title: "Email", value: "kilordpepo@gmail.com" },
                 { title: "Phone", value: "(+34) 617 284 542" },
                 { title: "Freelance", chip: true, value: "Available" }
