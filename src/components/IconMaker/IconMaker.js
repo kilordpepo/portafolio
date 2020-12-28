@@ -13,6 +13,9 @@ import {
   SendIcon,
   LocationOnIcon,
   PhoneEnabledIcon,
+  LaptopMacIcon,
+  SettingsIcon,
+  StorageIcon,
   ICONS
 } from "./index";
 
@@ -80,6 +83,15 @@ const IconMaker = ({ icon, iconColor, sizeNum, mouseOver, mouseOut }) => {
       {icon === ICONS.phone && (
         <PhoneEnabledIcon className={iconColor} style={{ fontSize: sizeNum }} />
       )}
+      {icon === ICONS.laptop && (
+        <LaptopMacIcon className={iconColor} style={{ fontSize: sizeNum }} />
+      )}
+      {icon === ICONS.engine && (
+        <SettingsIcon className={iconColor} style={{ fontSize: sizeNum }} />
+      )}
+      {icon === ICONS.data && (
+        <StorageIcon className={iconColor} style={{ fontSize: sizeNum }} />
+      )}
     </>
   );
 };
@@ -87,8 +99,8 @@ const IconMaker = ({ icon, iconColor, sizeNum, mouseOver, mouseOut }) => {
 IconMaker.propTypes = {
   icon: PropTypes.string.isRequired,
   iconColor: PropTypes.objectOf(PropTypes.string),
-  mouseOver: PropTypes.func.isRequired,
-  mouseOut: PropTypes.func.isRequired,
+  mouseOver: PropTypes.func,
+  mouseOut: PropTypes.func,
   sizeNum: PropTypes.number
 };
 

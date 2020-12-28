@@ -10,7 +10,10 @@ export const ICONS = {
   burger: "burger",
   sendMail: "sendMail",
   location: "location",
-  phone: "phone"
+  phone: "phone",
+  laptop: "laptop",
+  engine: "engine",
+  data: "data"
 };
 
 export const LINKS = [
