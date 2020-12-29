@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "space-between",
     flexDirection: "column",
-    width: styles.sizes.sidebarDimensions.width,
+    width: styles.sizes.globalDimensions.sections.spacingLeft,
     height: styles.sizes.globalDimensions.percentageFull,
     backgroundColor: styles.colors.darkGray,
     borderRight: `${styles.sizes.thickness.thick1} solid ${styles.colors.black}`,
@@ -26,13 +26,13 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     zIndex: styles.depth.globalLayers.highLevel,
     [theme.breakpoints.down("xs")]: {
-      width: styles.sizes.sidebarDimensions.minWidth
+      width: styles.sizes.globalDimensions.sections.minSpacingLeft
     },
     [theme.breakpoints.down("md")]: {
       overflow: "auto"
     },
     [theme.breakpoints.only("xl")]: {
-      width: styles.sizes.sidebarDimensions.maxWidth
+      width: styles.sizes.globalDimensions.sections.maxSpacingLeft
     }
   },
   appBar: {

@@ -1,4 +1,5 @@
 import React from "react";
+import { makeStyles, Typography, Link } from "@material-ui/core";
 import { styles } from "../../styles";
 import {
   SectionTitle,
@@ -7,7 +8,6 @@ import {
   StyledButton,
   ServicesInfo
 } from "./components";
-import { makeStyles, Typography, Link } from "@material-ui/core";
 import file from "./file/EnglishCV.pdf";
 
 const useStyles = makeStyles(theme => ({
@@ -16,12 +16,12 @@ const useStyles = makeStyles(theme => ({
     height: styles.sizes.globalDimensions.percentageFull,
     overflowY: "scroll",
     background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.sidebarDimensions.width,
+    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0
     },
     [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.sidebarDimensions.maxWidth
+      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
     }
   },
   aboutContent: {

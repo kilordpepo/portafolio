@@ -7,10 +7,12 @@ export const styles = {
     red: "rgb(220, 40, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
+    gray: "rgb(90, 90, 90)",
     lightGray: "rgb(128, 128, 128)",
     silver: "rgb(220, 220, 220)",
     lightBlue: "rgb(0, 136, 235)",
     mediumBlue: "rgb(0, 116, 200)",
+    darkAquamarine: "rgb(0, 125, 125)",
     transparentLightBlue: "rgba(0, 136, 235, 0.75)",
     transparent: "rgba(0, 0, 0, 0)"
   },
@@ -107,7 +109,11 @@ export const styles = {
       sections: {
         largeSize: "1300px",
         mediumSize: "1024px",
-        smallSize: "800px"
+        smallSize: "800px",
+        extraSmallSize: "400px",
+        spacingLeft: "200px",
+        minSpacingLeft: "180px",
+        maxSpacingLeft: "250px"
       }
     },
     sidebarDimensions: {

@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { styles } from "../../styles";
-import {
-  SectionTitle,
-  SectionSubtitle,
-  TimelineMaker,
-  SkillMeter
-} from "./components";
 import { makeStyles } from "@material-ui/core";
+import { styles } from "../../styles";
+import { SectionTitle, TimelineMaker, SkillMeter } from "./components";
 
 const useStyles = makeStyles(theme => ({
   resumeSection: {
@@ -14,12 +9,12 @@ const useStyles = makeStyles(theme => ({
     height: styles.sizes.globalDimensions.percentageFull,
     overflowY: "scroll",
     background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.sidebarDimensions.width,
+    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0
     },
     [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.sidebarDimensions.maxWidth
+      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
     }
   },
   resumeContent: {
@@ -51,9 +46,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       marginBottom: styles.sizes.thickness.thick11
     }
-  },
-  subtitle: {
-    marginBottom: styles.sizes.thickness.thick21
   },
   skills: {
     display: "flex",
@@ -95,7 +87,6 @@ const Resume = () => {
   return (
     <div
       className={classes.resumeSection}
-      id='resumeSection'
       onScroll={event => handleScroll(event)}
     >
       <div className={classes.resumeContent}>
@@ -111,10 +102,8 @@ const Resume = () => {
         </div>
         <div className={classes.information}>
           <div className={classes.timeline}>
-            <div className={classes.subtitle}>
-              <SectionSubtitle subtitleText='EXPERIENCE' />
-            </div>
             <TimelineMaker
+              subtitle={{ text: "EXPERIENCE" }}
               timeline={[
                 {
                   date: {
@@ -150,10 +139,8 @@ const Resume = () => {
             />
           </div>
           <div className={classes.timeline}>
-            <div className={classes.subtitle}>
-              <SectionSubtitle subtitleText='EDUCATION' />
-            </div>
             <TimelineMaker
+              subtitle={{ text: "EDUCATION" }}
               timeline={[
                 {
                   date: {
@@ -191,10 +178,8 @@ const Resume = () => {
         </div>
         <div className={classes.skills}>
           <div className={classes.skillCards}>
-            <div className={classes.subtitle} id='myBar'>
-              <SectionSubtitle subtitleText='PROGRAMMING SKILLS' />
-            </div>
             <SkillMeter
+              subtitle={{ text: "PROGRAMMING SKILLS" }}
               animationOver={finishAnimation}
               page={pageObject}
               scrolling={scrolling}
@@ -206,10 +191,8 @@ const Resume = () => {
             />
           </div>
           <div className={classes.skillCards}>
-            <div className={classes.subtitle}>
-              <SectionSubtitle subtitleText='CODING & DESIGN SKILLS' />
-            </div>
             <SkillMeter
+              subtitle={{ text: "CODING & DESIGN SKILLS" }}
               animationOver={finishAnimation}
               page={pageObject}
               scrolling={scrolling}

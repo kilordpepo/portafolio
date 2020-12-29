@@ -1,6 +1,6 @@
 import React from "react";
-import { styles } from "../../styles";
 import { makeStyles } from "@material-ui/core";
+import { styles } from "../../styles";
 import {
   SectionTitle,
   SectionSubtitle,
@@ -14,14 +14,14 @@ const useStyles = makeStyles(theme => ({
     height: styles.sizes.globalDimensions.percentageFull,
     overflowY: "scroll",
     background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.sidebarDimensions.width,
+    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
     padding: `0 ${styles.sizes.thickness.thick21}`,
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
       padding: 0
     },
     [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.sidebarDimensions.maxWidth
+      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
     }
   },
   contactMessage: {

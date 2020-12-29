@@ -65,12 +65,12 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
               underline='none'
               color='inherit'
               onClick={hide}
+              key={text.section}
             >
               <ListItem
                 button
                 selected={selectedIndex === index}
                 onClick={event => handleListItemClick(event, index)}
-                key={text.section}
               >
                 <ListItemIcon>
                   <IconMaker
@@ -78,7 +78,7 @@ const SelectedListItem = ({ items, iconImage, hide }) => {
                     iconColor={selectIconColor(index)}
                   />
                 </ListItemIcon>
-                <ListItemText disableTypography='true' primary={text.section} />
+                <ListItemText disableTypography={true} primary={text.section} />
               </ListItem>
             </Link>
           ))}

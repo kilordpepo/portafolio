@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { styles } from "../../../../styles";
 import { makeStyles, Typography } from "@material-ui/core";
+import { styles } from "../../../../styles";
+import { SectionSubtitle } from "../index";
 
 const useStyles = makeStyles(theme => ({
+  subtitle: {
+    marginBottom: styles.sizes.thickness.thick21
+  },
   skillItem: {
     marginBottom: styles.sizes.thickness.thick6,
     padding: `0 ${styles.sizes.thickness.thick11}`,
@@ -46,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SkillMeter = ({ skills, scrolling, page, animationOver }) => {
+const SkillMeter = ({ subtitle, skills, scrolling, page, animationOver }) => {
   const classes = useStyles();
   const [animated, setAnimated] = useState(0);
 
@@ -86,25 +90,28 @@ const SkillMeter = ({ skills, scrolling, page, animationOver }) => {
     }
   };
 
-  const confirmAll = () => {
-    for (let i = 0; i < skills.length; i++) {
-      confirmingPosition(i);
-    }
-  };
-
-  const animate = () => {
+  useEffect(() => {
     if (scrolling) {
-      confirmAll();
+      for (let i = 0; i < skills.length; i++) {
+        confirmingPosition(i);
+      }
     }
-  };
-
-  animate();
+  });
 
   return (
     <div>
+      <div className={classes.subtitle}>
+        <SectionSubtitle
+          subtitleText={subtitle.text}
+          size={subtitle.size}
+          borderColor={subtitle.borderColor}
+          padding={subtitle.padding}
+          alignItems={subtitle.alignItems}
+        />
+      </div>
       {skills.map((sk, index) => (
         <div
-          id={`${sk.key}-progressBar`}
+          id={`${sk.key}-progress-bar`}
           key={sk.key}
           className={classes.skillItem}
         >
@@ -130,6 +137,13 @@ const SkillMeter = ({ skills, scrolling, page, animationOver }) => {
 };
 
 SkillMeter.propTypes = {
+  subtitle: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    borderColor: PropTypes.string,
+    padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    alignItems: PropTypes.string
+  }),
   animationOver: PropTypes.func,
   page: PropTypes.object.isRequired,
   scrolling: PropTypes.bool.isRequired,

@@ -56,6 +56,7 @@ const Footer = ({ links, iconImage }) => {
             target='_blank'
             rel='noopener noreferrer'
             className={classes.link}
+            key={iconImage[index]}
           >
             <IconMaker
               icon={iconImage[index]}

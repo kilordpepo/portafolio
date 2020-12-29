@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "../../../../styles";
 import { makeStyles, Typography, Fade } from "@material-ui/core";
+import { styles } from "../../../../styles";
 import AnimatedRole from "../AnimatedRole/HomeRole";
 
 const useStyles = makeStyles(theme => ({

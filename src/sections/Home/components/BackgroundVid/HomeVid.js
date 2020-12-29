@@ -1,6 +1,6 @@
 import React from "react";
-import { styles } from "../../../../styles";
 import { makeStyles } from "@material-ui/core";
+import { styles } from "../../../../styles";
 import videoMp4 from "./video/video_03_gaussian_blur.mp4";
 import videoWebm from "./video/video_03_gaussian_blur.webm";
 import videoOgg from "./video/video_03_gaussian_blur.ogv";
