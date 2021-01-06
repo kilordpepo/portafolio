@@ -1,3 +1,3 @@
-import { styles } from "./styles";
+import { styles, standardClasses } from "./styles";
 
-export { styles };
+export { styles, standardClasses };

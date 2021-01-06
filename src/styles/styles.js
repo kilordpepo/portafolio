@@ -1,3 +1,5 @@
+import { makeStyles } from "@material-ui/core";
+
 export const styles = {
   colors: {
     white: "rgb(255, 255, 255)",
@@ -141,12 +143,7 @@ export const styles = {
   fontFamilies: {
     Roboto: "Roboto, sans-serif",
     RobotoCond: "Roboto Condensed, sans-serif",
-    Merriweather: "Merriweather, serif",
-    Yesteryear: "Yesteryear",
-    Rye: "Rye",
-    Ewert: "Ewert",
-    Berkshire: "Berkshire Swash",
-    Euphoria: "Euphoria Script"
+    Merriweather: "Merriweather, serif"
   },
   depth: {
     globalLayers: {
@@ -167,3 +164,36 @@ export const styles = {
     }
   }
 };
+
+export const standardClasses = makeStyles(theme => ({
+  sectionContainer: {
+    boxSizing: "border-box",
+    height: styles.sizes.globalDimensions.percentageFull,
+    overflowY: "scroll",
+    background: styles.colors.mediumGray,
+    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+      padding: 0
+    },
+    [theme.breakpoints.only("xl")]: {
+      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
+    }
+  },
+  sectionContent: {
+    width: styles.sizes.globalDimensions.percentageNineTenths,
+    maxWidth: styles.sizes.globalDimensions.sections.mediumSize,
+    margin: "0 auto",
+    padding: `${styles.sizes.thickness.thick21} 0 ${styles.sizes.thickness.thick21} 0`,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: styles.sizes.largeThickness.thick3
+    }
+  },
+  sectionInfo: {
+    display: "flex",
+    color: styles.colors.silver,
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column"
+    }
+  }
+}));

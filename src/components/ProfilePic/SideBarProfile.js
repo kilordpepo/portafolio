@@ -10,7 +10,13 @@ const useStyles = makeStyles(theme => ({
   },
   pic: {
     width: styles.sizes.globalDimensions.percentageFull,
-    height: "auto"
+    height: styles.sizes.globalDimensions.sections.spacingLeft,
+    [theme.breakpoints.down("xs")]: {
+      height: styles.sizes.globalDimensions.sections.minSpacingLeft
+    },
+    [theme.breakpoints.only("xl")]: {
+      height: styles.sizes.globalDimensions.sections.maxSpacingLeft
+    }
   },
   text: {
     color: styles.colors.white,

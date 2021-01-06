@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, Typography, Link } from "@material-ui/core";
-import { styles } from "../../styles";
+import { styles, standardClasses } from "../../styles";
 import {
   SectionTitle,
   SectionSubtitle,
@@ -11,35 +11,8 @@ import {
 import file from "./file/EnglishCV.pdf";
 
 const useStyles = makeStyles(theme => ({
-  aboutSection: {
-    boxSizing: "border-box",
-    height: styles.sizes.globalDimensions.percentageFull,
-    overflowY: "scroll",
-    background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: 0
-    },
-    [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
-    }
-  },
-  aboutContent: {
-    width: styles.sizes.globalDimensions.percentageNineTenths,
-    maxWidth: styles.sizes.globalDimensions.sections.mediumSize,
-    margin: "0 auto",
-    padding: `${styles.sizes.thickness.thick21} 0 ${styles.sizes.thickness.thick21} 0`,
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: styles.sizes.largeThickness.thick3
-    }
-  },
   information: {
-    display: "flex",
-    color: styles.colors.silver,
-    margin: `${styles.sizes.thickness.thick26} 0`,
-    [theme.breakpoints.down("md")]: {
-      flexDirection: "column"
-    }
+    margin: `${styles.sizes.thickness.thick26} 0`
   },
   paragraphCont: {
     padding: `0 ${styles.sizes.specialThick.spacingThick2}`
@@ -64,9 +37,10 @@ const useStyles = makeStyles(theme => ({
 
 const AboutMe = () => {
   const classes = useStyles();
+  const standard = standardClasses();
   return (
-    <div className={classes.aboutSection}>
-      <div className={classes.aboutContent}>
+    <div className={standard.sectionContainer}>
+      <div className={standard.sectionContent}>
         <div>
           <SectionTitle
             title='About me.'
@@ -77,7 +51,7 @@ const AboutMe = () => {
             }}
           />
         </div>
-        <div className={classes.information}>
+        <div className={`${standard.sectionInfo} ${classes.information}`}>
           <div className={classes.paragraphCont}>
             <SectionSubtitle
               subtitleText='Full Stack Developer'

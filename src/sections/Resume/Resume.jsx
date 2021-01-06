@@ -1,38 +1,12 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
-import { styles } from "../../styles";
+import { styles, standardClasses } from "../../styles";
 import { SectionTitle, TimelineMaker, SkillMeter } from "./components";
 
 const useStyles = makeStyles(theme => ({
-  resumeSection: {
-    boxSizing: "border-box",
-    height: styles.sizes.globalDimensions.percentageFull,
-    overflowY: "scroll",
-    background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: 0
-    },
-    [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
-    }
-  },
-  resumeContent: {
-    width: styles.sizes.globalDimensions.percentageNineTenths,
-    maxWidth: styles.sizes.globalDimensions.sections.mediumSize,
-    margin: "0 auto",
-    padding: `${styles.sizes.thickness.thick21} 0 ${styles.sizes.thickness.thick21} 0`,
-    [theme.breakpoints.down("sm")]: {
-      paddingTop: styles.sizes.largeThickness.thick3,
-      paddingBottom: 0
-    }
-  },
   information: {
-    display: "flex",
-    color: styles.colors.silver,
-    margin: `${styles.sizes.thickness.thick26} 0 30px 0`,
+    margin: `${styles.sizes.thickness.thick26} 0 ${styles.sizes.thickness.thick16} 0`,
     [theme.breakpoints.down("md")]: {
-      flexDirection: "column",
       marginBottom: 0
     }
   },
@@ -68,6 +42,7 @@ const useStyles = makeStyles(theme => ({
 
 const Resume = () => {
   const classes = useStyles();
+  const standard = standardClasses();
   const [scrolling, setScrolling] = useState(false);
   const [pageObject, setPageObject] = useState({});
   const [animationEnd, setAnimationEnd] = useState(false);
@@ -86,10 +61,10 @@ const Resume = () => {
 
   return (
     <div
-      className={classes.resumeSection}
+      className={standard.sectionContainer}
       onScroll={event => handleScroll(event)}
     >
-      <div className={classes.resumeContent}>
+      <div className={standard.sectionContent}>
         <div>
           <SectionTitle
             title='My Resume.'
@@ -100,40 +75,70 @@ const Resume = () => {
             }}
           />
         </div>
-        <div className={classes.information}>
+        <div className={`${standard.sectionInfo} ${classes.information}`}>
           <div className={classes.timeline}>
             <TimelineMaker
               subtitle={{ text: "EXPERIENCE" }}
               timeline={[
                 {
                   date: {
-                    from: "2019",
-                    to: "2020"
+                    from: "2020",
+                    to: "Present"
                   },
-                  title: "Porta cum conubia",
-                  reference: "Nullam fringilla sapien ac, Helsinki, FI",
+                  title: "Developer",
+                  reference: "Hiberus Tecnología, Zaragoza, ES",
                   text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit arcu imperdiet dignissim, felis ultrices nunc suspendisse ac risus hac turpis elementum."
+                    "Frontend developer working in javascript with React.JS on highly demanded projects with SCRUM methodology."
                 },
                 {
                   date: {
-                    from: "2018",
-                    to: "2019"
+                    from: "aug. 2019",
+                    to: "dec. 2019"
                   },
-                  title: "Curae primis vehicula",
-                  reference: "Elementum quisque himenaeos, Paris, FR",
+                  title: "Full Stack Developer",
+                  reference: "LoreBI, C. A., Caracas, VE",
                   text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit, nostra elementum ultrices condimentum turpis rutrum, malesuada rhoncus montes luctus pretium feugiat."
+                    "Full Stack Developer, maintaining a system capable of managing employee schedules developed with Angular.js on the frontend. I developed a job scheduler in the backend with node.js and also modified some services in other APIs made with Java Spring."
+                },
+                {
+                  date: {
+                    from: "jan. 2019",
+                    to: " dec. 2019"
+                  },
+                  title: "Semi-Senior Full Stack Developer",
+                  reference: "Teravision Technologies",
+                  text:
+                    "Full Stack web developer, working with Frameworks: Angular, React.JS (with Redux), NestJS, PostgreSQL database, Javascript and Typescript languages, SCRUM methodology, version management with GIT and use of technologies such as Scrumwise and Jira."
+                },
+                {
+                  date: {
+                    from: "july 2018",
+                    to: "dec. 2018"
+                  },
+                  title: "Frontend Developer",
+                  reference: "Retorna, CL",
+                  text:
+                    "Frontend web developer at half time using SCRUM to manage the project tasks while working with Angular 6 framework to develop a web site (typescript and node.js), integrating it with AWS services and versioning it with GIT."
                 },
                 {
                   date: {
                     from: "2017",
                     to: "2018"
                   },
-                  title: "Vitae pulvinar aenean",
-                  reference: "Phasellus semper potenti, Zaragoza, ES",
+                  title: "Senior Analyst",
+                  reference: "Venezuelan Credit Bank, Caracas, VE",
                   text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus sem eu sodales lacus sed, at velit integer netus aliquam libero."
+                    "Web developer for the bank's intranet systems, working with Oracle databases, Java and Javascript languages, Angular Framework, Jquery, JPA and spring libraries, IDES Netbeans, Eclipse and JDeveloper and technologies such as java Servlet."
+                },
+                {
+                  date: {
+                    from: "aug. 2015",
+                    to: "sept. 2015"
+                  },
+                  title: "Sales consultant and technician",
+                  reference: "AWOS, Caracas, VE",
+                  text:
+                    "Technician with phones and computers while advising two employees on how to approach the customer and sell technology devices."
                 }
               ]}
             />
@@ -144,33 +149,23 @@ const Resume = () => {
               timeline={[
                 {
                   date: {
-                    from: "2016",
-                    to: "2017"
-                  },
-                  title: "Torquent ut",
-                  reference: "Pretium primis molestie, NY, USA",
-                  text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit, nunc quis ad vehicula tristique senectus, venenatis vulputate hendrerit sagittis diam duis."
-                },
-                {
-                  date: {
-                    from: "2014",
-                    to: "2016"
-                  },
-                  title: "Nostra nibh viverra",
-                  reference: "Diam nascetur, Berlin, DE",
-                  text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit curae taciti congue, eleifend faucibus duis accumsan in nulla metus posuere penatibus."
-                },
-                {
-                  date: {
                     from: "2013",
-                    to: "2014"
+                    to: "2018"
                   },
-                  title: "Mauris quam",
-                  reference: "Orci suspendisse, Warwick, UK",
+                  title: "Informatics Engineering",
+                  reference: "Catholic University Andres Bello, Caracas, VE",
                   text:
-                    "Lorem ipsum dolor sit amet consectetur adipiscing elit, tristique posuere dictumst hac laoreet suspendisse, pretium curae mi morbi vel cras."
+                    "General Secretary of the Student Center, Academic Advisor and student with an average of 15."
+                },
+                {
+                  date: {
+                    from: "2001",
+                    to: "2013"
+                  },
+                  title: "Bachelor of science",
+                  reference: "San Ignacio School, Caracas, VE",
+                  text:
+                    "Student with an average of 15, participant in extracurricular activities such as basketball and swimming."
                 }
               ]}
             />
@@ -179,27 +174,29 @@ const Resume = () => {
         <div className={classes.skills}>
           <div className={classes.skillCards}>
             <SkillMeter
-              subtitle={{ text: "PROGRAMMING SKILLS" }}
+              subtitle={{ text: "CODING SKILLS" }}
               animationOver={finishAnimation}
               page={pageObject}
               scrolling={scrolling}
               skills={[
-                { skill: "JavaScript", percentage: 95, key: "JS" },
-                { skill: "Python", percentage: 84, key: "Py" },
-                { skill: "Java", percentage: 92, key: "Jv" }
+                { skill: "JavaScript", percentage: 90, key: "JS" },
+                { skill: "SQL", percentage: 80, key: "Sq" },
+                { skill: "Python", percentage: 60, key: "Py" },
+                { skill: "Java", percentage: 50, key: "Jv" }
               ]}
             />
           </div>
           <div className={classes.skillCards}>
             <SkillMeter
-              subtitle={{ text: "CODING & DESIGN SKILLS" }}
+              subtitle={{ text: "FRAMEWORKS SKILLS" }}
               animationOver={finishAnimation}
               page={pageObject}
               scrolling={scrolling}
               skills={[
-                { skill: "CSS3", percentage: 88, key: "Css" },
-                { skill: "HTML5", percentage: 97, key: "Ht" },
-                { skill: "PhotoShop", percentage: 87, key: "Ps" }
+                { skill: "React", percentage: 90, key: "Re" },
+                { skill: "NestJS", percentage: 80, key: "NJ" },
+                { skill: "Angular", percentage: 70, key: "An" },
+                { skill: "Serverless", percentage: 60, key: "Sl" }
               ]}
             />
           </div>

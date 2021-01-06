@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
-import { styles } from "../../styles";
+import { styles, standardClasses } from "../../styles";
 import {
   SectionTitle,
   SectionSubtitle,
@@ -10,19 +10,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
   contactSection: {
-    boxSizing: "border-box",
-    height: styles.sizes.globalDimensions.percentageFull,
-    overflowY: "scroll",
-    background: styles.colors.mediumGray,
-    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
-    padding: `0 ${styles.sizes.thickness.thick21}`,
-    [theme.breakpoints.down("sm")]: {
-      marginLeft: 0,
-      padding: 0
-    },
-    [theme.breakpoints.only("xl")]: {
-      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
-    }
+    padding: `0 ${styles.sizes.thickness.thick21}`
   },
   contactMessage: {
     display: "flex",
@@ -42,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   contactForm: {
-    marginTop: 40,
+    marginTop: styles.sizes.thickness.thick21,
     [theme.breakpoints.down("sm")]: {
       marginTop: styles.sizes.largeThickness.thick1
     }
@@ -61,9 +49,10 @@ const useStyles = makeStyles(theme => ({
 
 const ContactMe = () => {
   const classes = useStyles();
+  const standard = standardClasses();
   return (
-    <div className={classes.contactSection}>
-      <div className={classes.contactMessage}>
+    <div className={`${classes.contactSection} ${standard.sectionContainer}`}>
+      <div className={`${classes.contactMessage}`}>
         <div>
           <SectionTitle
             title='Contact me.'

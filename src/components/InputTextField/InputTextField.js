@@ -69,9 +69,9 @@ const InputTextField = ({
   const classes = useStyles();
 
   const empty = (
-    <div className={classes.helperTextCont} style={{ visibility: "hidden" }}>
+    <span className={classes.helperTextCont} style={{ visibility: "hidden" }}>
       spacing
-    </div>
+    </span>
   );
 
   return (
@@ -79,7 +79,6 @@ const InputTextField = ({
       <StyledTextField
         label={label}
         id={id}
-        color='green'
         name={name}
         value={value}
         onChange={onChange}
@@ -103,8 +102,8 @@ InputTextField.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  error: PropTypes.bool.isRequired,
-  helperText: PropTypes.string.isRequired
+  error: PropTypes.bool,
+  helperText: PropTypes.string
 };
 
 export default InputTextField;
