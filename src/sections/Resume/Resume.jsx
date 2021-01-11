@@ -4,6 +4,11 @@ import { styles, standardClasses } from "../../styles";
 import { SectionTitle, TimelineMaker, SkillMeter } from "./components";
 
 const useStyles = makeStyles(theme => ({
+  resumeContent: {
+    [theme.breakpoints.down("md")]: {
+      paddingBottom: 0
+    }
+  },
   information: {
     margin: `${styles.sizes.thickness.thick26} 0 ${styles.sizes.thickness.thick16} 0`,
     [theme.breakpoints.down("md")]: {
@@ -32,10 +37,8 @@ const useStyles = makeStyles(theme => ({
     padding: `0 ${styles.sizes.specialThick.spacingThick2}`,
     [theme.breakpoints.down("md")]: {
       width: styles.sizes.globalDimensions.percentageFull,
+      marginBottom: styles.sizes.thickness.thick21,
       padding: "0"
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: styles.sizes.thickness.thick21
     }
   }
 }));
@@ -64,7 +67,7 @@ const Resume = () => {
       className={standard.sectionContainer}
       onScroll={event => handleScroll(event)}
     >
-      <div className={standard.sectionContent}>
+      <div className={`${standard.sectionContent} ${classes.resumeContent}`}>
         <div>
           <SectionTitle
             title='My Resume.'
@@ -82,61 +85,67 @@ const Resume = () => {
               timeline={[
                 {
                   date: {
-                    from: "2020",
-                    to: "Present"
+                    from: { year: "2020", month: "" },
+                    to: { year: "Today", month: "" }
                   },
                   title: "Developer",
-                  reference: "Hiberus Tecnología, Zaragoza, ES",
+                  reference: "Hiberus Tecnología, ",
+                  location: "Spain",
                   text:
                     "Frontend developer working in javascript with React.JS on highly demanded projects with SCRUM methodology."
                 },
                 {
                   date: {
-                    from: "aug. 2019",
-                    to: "dec. 2019"
+                    from: { year: "2019", month: "(aug.)" },
+                    to: { year: "2019", month: "(dec.)" }
                   },
                   title: "Full Stack Developer",
-                  reference: "LoreBI, C. A., Caracas, VE",
+                  reference: "LoreBI, C. A., ",
+                  location: "Venezuela",
                   text:
                     "Full Stack Developer, maintaining a system capable of managing employee schedules developed with Angular.js on the frontend. I developed a job scheduler in the backend with node.js and also modified some services in other APIs made with Java Spring."
                 },
                 {
                   date: {
-                    from: "jan. 2019",
-                    to: " dec. 2019"
+                    from: { year: "2019", month: "(jan.)" },
+                    to: { year: "2019", month: "(dec.)" }
                   },
                   title: "Semi-Senior Full Stack Developer",
-                  reference: "Teravision Technologies",
+                  reference: "Teravision Technologies, ",
+                  location: "Venezuela",
                   text:
                     "Full Stack web developer, working with Frameworks: Angular, React.JS (with Redux), NestJS, PostgreSQL database, Javascript and Typescript languages, SCRUM methodology, version management with GIT and use of technologies such as Scrumwise and Jira."
                 },
                 {
                   date: {
-                    from: "july 2018",
-                    to: "dec. 2018"
+                    from: { year: "2018", month: "(july.)" },
+                    to: { year: "2018", month: "(dec.)" }
                   },
                   title: "Frontend Developer",
-                  reference: "Retorna, CL",
+                  reference: "Retorna, ",
+                  location: "Venezuela",
                   text:
                     "Frontend web developer at half time using SCRUM to manage the project tasks while working with Angular 6 framework to develop a web site (typescript and node.js), integrating it with AWS services and versioning it with GIT."
                 },
                 {
                   date: {
-                    from: "2017",
-                    to: "2018"
+                    from: { year: "2017", month: "" },
+                    to: { year: "2018", month: "" }
                   },
                   title: "Senior Analyst",
-                  reference: "Venezuelan Credit Bank, Caracas, VE",
+                  reference: "Venezuelan Credit Bank, ",
+                  location: "Venezuela",
                   text:
                     "Web developer for the bank's intranet systems, working with Oracle databases, Java and Javascript languages, Angular Framework, Jquery, JPA and spring libraries, IDES Netbeans, Eclipse and JDeveloper and technologies such as java Servlet."
                 },
                 {
                   date: {
-                    from: "aug. 2015",
-                    to: "sept. 2015"
+                    from: { year: "2015", month: "(aug.)" },
+                    to: { year: "2015", month: "(sept.)" }
                   },
                   title: "Sales consultant and technician",
-                  reference: "AWOS, Caracas, VE",
+                  reference: "AWOS, ",
+                  location: "Venezuela",
                   text:
                     "Technician with phones and computers while advising two employees on how to approach the customer and sell technology devices."
                 }
@@ -149,21 +158,23 @@ const Resume = () => {
               timeline={[
                 {
                   date: {
-                    from: "2013",
-                    to: "2018"
+                    from: { year: "2013", month: "" },
+                    to: { year: "2018", month: "" }
                   },
                   title: "Informatics Engineering",
-                  reference: "Catholic University Andres Bello, Caracas, VE",
+                  reference: "Catholic University Andres Bello, ",
+                  location: "Venezuela",
                   text:
                     "General Secretary of the Student Center, Academic Advisor and student with an average of 15."
                 },
                 {
                   date: {
-                    from: "2001",
-                    to: "2013"
+                    from: { year: "2001", month: "" },
+                    to: { year: "2013", month: "" }
                   },
                   title: "Bachelor of science",
-                  reference: "San Ignacio School, Caracas, VE",
+                  reference: "San Ignacio School, ",
+                  location: "Venezuela",
                   text:
                     "Student with an average of 15, participant in extracurricular activities such as basketball and swimming."
                 }

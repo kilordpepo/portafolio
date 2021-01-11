@@ -24,12 +24,15 @@ export const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    boxSizing: "border-box",
+    width: styles.sizes.specialThick.spacingThick4,
     [theme.breakpoints.down("sm")]: {
       display: "none"
     }
   },
   dateYear: {
     color: styles.colors.white,
+    fontSize: styles.sizes.thickness.thick8,
     position: "relative",
     right: styles.sizes.thickness.thick5
   },
@@ -80,7 +83,11 @@ export const useStyles = makeStyles(theme => ({
     fontFamily: styles.fontFamilies.Roboto,
     fontWeight: "bold"
   },
+  cardLocation: {
+    color: styles.colors.white
+  },
   cardText: {
-    color: styles.colors.silver
+    color: styles.colors.silver,
+    textAlign: "justify"
   }
 }));

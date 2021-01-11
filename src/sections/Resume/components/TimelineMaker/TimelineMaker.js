@@ -21,18 +21,25 @@ const TimelineMaker = ({ subtitle, timeline }) => {
       <ul className={classes.timelineWrapper}>
         {timeline.map((time, index) => (
           <li
-            key={`lapse-num${index}-${time.date.from}-${time.date.to}`}
+            key={`lapse-num${index}-${time.date.from.year}-${time.date.to.year}`}
             className={classes.timelineCard}
           >
             <div className={classes.dates}>
-              <span className={classes.dateYear}>{time.date.to}</span>
-              <span className={classes.dateYear}>{time.date.from}</span>
+              <span className={classes.dateYear}>
+                {`${time.date.to.year} `}
+                {`${time.date.to.month}`}
+              </span>
+              <span className={classes.dateYear}>
+                {`${time.date.from.month} `}
+                {`${time.date.from.year}`}
+              </span>
             </div>
             <div className={classes.info}>
               <span
                 className={`${classes.dateYearMobile} ${classes.dateYearTo}`}
               >
-                {time.date.to}
+                {`${time.date.to.year} `}
+                {time.date.to.month}
               </span>
               <div className={classes.datelineCircle} />
               <div className={classes.dateline}>
@@ -45,6 +52,9 @@ const TimelineMaker = ({ subtitle, timeline }) => {
                     variant='caption'
                   >
                     {time.reference.toUpperCase()}
+                    <span className={classes.cardLocation}>
+                      {time.location.toUpperCase()}
+                    </span>
                   </Typography>
                   <Typography className={classes.cardText}>
                     {time.text}
@@ -55,7 +65,8 @@ const TimelineMaker = ({ subtitle, timeline }) => {
               <span
                 className={`${classes.dateYearMobile} ${classes.dateYearFrom}`}
               >
-                {time.date.from}
+                {`${time.date.from.year} `}
+                {time.date.from.month}
               </span>
             </div>
           </li>
@@ -76,11 +87,18 @@ TimelineMaker.propTypes = {
   timeline: PropTypes.arrayOf(
     PropTypes.shape({
       date: PropTypes.shape({
-        from: PropTypes.string.isRequired,
-        to: PropTypes.string.isRequired
+        from: PropTypes.shape({
+          year: PropTypes.string.isRequired,
+          date: PropTypes.string
+        }),
+        to: PropTypes.shape({
+          year: PropTypes.string.isRequired,
+          date: PropTypes.string
+        })
       }),
       title: PropTypes.string.isRequired,
       reference: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
   )
