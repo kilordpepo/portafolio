@@ -5,62 +5,12 @@ import {
   IconButton,
   Hidden,
   Drawer,
-  Typography,
-  makeStyles
+  Typography
 } from "@material-ui/core";
 import { Footer, SelectedListItem, ProfilePic, IconMaker } from "./components";
-import { styles } from "../../styles";
+import { useStyles } from "./styles";
 import { LINKS } from "../../utils/constants";
-
-const useStyles = makeStyles(theme => ({
-  sidebarCont: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "column",
-    width: styles.sizes.sidebarDimensions.width,
-    height: styles.sizes.globalDimensions.percentageFull,
-    backgroundColor: styles.colors.darkGray,
-    borderRight: `${styles.sizes.thickness.thick1} solid ${styles.colors.black}`,
-    position: "fixed",
-    top: 0,
-    left: 0,
-    zIndex: styles.depth.globalLayers.highLevel,
-    [theme.breakpoints.down("xs")]: {
-      width: styles.sizes.sidebarDimensions.minWidth
-    },
-    [theme.breakpoints.down("md")]: {
-      overflow: "auto"
-    },
-    [theme.breakpoints.only("xl")]: {
-      width: styles.sizes.sidebarDimensions.maxWidth
-    }
-  },
-  appBar: {
-    backgroundColor: styles.colors.darkGray
-  },
-  menuButton: {
-    position: "absolute"
-  },
-  overlap: {
-    position: "relative",
-    bottom: styles.sizes.thickness.thick22
-  },
-  text: {
-    fontFamily: styles.fontFamilies.Merriweather,
-    fontWeight: "bold"
-  },
-  centerTitle: {
-    width: styles.sizes.globalDimensions.percentageFull,
-    display: "flex",
-    justifyContent: "center"
-  },
-  drawerPaper: {
-    width: styles.sizes.sidebarDimensions.minWidth,
-    [theme.breakpoints.only("sm")]: {
-      width: styles.sizes.sidebarDimensions.width
-    }
-  }
-}));
+import image from "./image/profile-pic.jpg";
 
 const SideBar = () => {
   const classes = useStyles();
@@ -78,18 +28,15 @@ const SideBar = () => {
     <div className={classes.sidebarCont}>
       <div>
         <div>
-          <ProfilePic
-            alt='Carlos Valero'
-            src='https://i.pinimg.com/236x/18/81/2e/18812e006fca40297d3f8be353a57c18--pig-girl-pig-birthday.jpg'
-          />
+          <ProfilePic alt='Carlos Valero' src={image} />
         </div>
         <div className={classes.overlap}>
           <SelectedListItem
             items={[
-              { section: "Home", path: "./home" },
-              { section: "About me", path: "./about-me" },
-              { section: "Resume", path: "./resume" },
-              { section: "Contact me", path: "./contact-me" }
+              { section: "Home", path: "/home" },
+              { section: "About me", path: "/about-me" },
+              { section: "Resume", path: "/resume" },
+              { section: "Contact me", path: "/contact-me" }
             ]}
             iconImage={["home", "person", "text", "mail"]}
             hide={handleHiding}

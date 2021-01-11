@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { styles } from "../../../../styles";
 import { makeStyles, Typography, Link } from "@material-ui/core";
+import { styles } from "../../../../styles";
 import { IconMaker } from "../index";
 
 const useStyles = makeStyles(theme => ({
@@ -37,7 +37,7 @@ const ContactInfo = ({ contacts }) => {
   return (
     <div className={classes.contactInfo}>
       {contacts.map(info => (
-        <div className={classes.contactCard}>
+        <div className={classes.contactCard} key={info.icon}>
           <IconMaker icon={info.icon} sizeNum={40} iconColor={classes.icon} />
           <Typography variant='h6' className={classes.contactText}>
             {info.link && (

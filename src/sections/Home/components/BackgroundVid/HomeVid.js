@@ -1,6 +1,6 @@
 import React from "react";
-import { styles } from "../../../../styles";
 import { makeStyles } from "@material-ui/core";
+import { styles } from "../../../../styles";
 import videoMp4 from "./video/video_03_gaussian_blur.mp4";
 import videoWebm from "./video/video_03_gaussian_blur.webm";
 import videoOgg from "./video/video_03_gaussian_blur.ogv";
@@ -40,12 +40,7 @@ const BackgroundVid = ({ vid }) => {
   return (
     <div className={classes.videoCont}>
       <div className={classes.bg}></div>
-      <video
-        className={classes.videoElement}
-        autoplay='autoplay'
-        muted
-        loop='loop'
-      >
+      <video className={classes.videoElement} autoPlay muted loop='loop'>
         <source src={videoMp4} type='video/mp4' />
         <source src={videoWebm} type='video/webm' />
         <source src={videoOgg} type='video/ogg' />

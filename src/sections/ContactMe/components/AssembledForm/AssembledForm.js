@@ -1,7 +1,7 @@
 import React from "react";
-import { styles } from "../../../../styles";
-import { makeStyles } from "@material-ui/core";
 import { useFormik } from "formik";
+import { makeStyles } from "@material-ui/core";
+import { styles } from "../../../../styles";
 import { InputTextField, StyledButton } from "../index";
 
 const useStyles = makeStyles(theme => ({

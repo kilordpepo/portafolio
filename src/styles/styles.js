@@ -1,3 +1,5 @@
+import { makeStyles } from "@material-ui/core";
+
 export const styles = {
   colors: {
     white: "rgb(255, 255, 255)",
@@ -7,10 +9,12 @@ export const styles = {
     red: "rgb(220, 40, 0)",
     darkGray: "rgb(45, 45, 45)",
     mediumGray: "rgb(70, 70, 70)",
+    gray: "rgb(90, 90, 90)",
     lightGray: "rgb(128, 128, 128)",
     silver: "rgb(220, 220, 220)",
     lightBlue: "rgb(0, 136, 235)",
     mediumBlue: "rgb(0, 116, 200)",
+    darkAquamarine: "rgb(0, 125, 125)",
     transparentLightBlue: "rgba(0, 136, 235, 0.75)",
     transparent: "rgba(0, 0, 0, 0)"
   },
@@ -107,7 +111,11 @@ export const styles = {
       sections: {
         largeSize: "1300px",
         mediumSize: "1024px",
-        smallSize: "800px"
+        smallSize: "800px",
+        extraSmallSize: "400px",
+        spacingLeft: "200px",
+        minSpacingLeft: "180px",
+        maxSpacingLeft: "250px"
       }
     },
     sidebarDimensions: {
@@ -135,12 +143,7 @@ export const styles = {
   fontFamilies: {
     Roboto: "Roboto, sans-serif",
     RobotoCond: "Roboto Condensed, sans-serif",
-    Merriweather: "Merriweather, serif",
-    Yesteryear: "Yesteryear",
-    Rye: "Rye",
-    Ewert: "Ewert",
-    Berkshire: "Berkshire Swash",
-    Euphoria: "Euphoria Script"
+    Merriweather: "Merriweather, serif"
   },
   depth: {
     globalLayers: {
@@ -161,3 +164,36 @@ export const styles = {
     }
   }
 };
+
+export const standardClasses = makeStyles(theme => ({
+  sectionContainer: {
+    boxSizing: "border-box",
+    height: styles.sizes.globalDimensions.percentageFull,
+    overflowY: "scroll",
+    background: styles.colors.mediumGray,
+    marginLeft: styles.sizes.globalDimensions.sections.spacingLeft,
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: 0,
+      padding: 0
+    },
+    [theme.breakpoints.only("xl")]: {
+      marginLeft: styles.sizes.globalDimensions.sections.maxSpacingLeft
+    }
+  },
+  sectionContent: {
+    width: styles.sizes.globalDimensions.percentageNineTenths,
+    maxWidth: styles.sizes.globalDimensions.sections.mediumSize,
+    margin: "0 auto",
+    padding: `${styles.sizes.thickness.thick21} 0 ${styles.sizes.thickness.thick21} 0`,
+    [theme.breakpoints.down("sm")]: {
+      paddingTop: styles.sizes.largeThickness.thick3
+    }
+  },
+  sectionInfo: {
+    display: "flex",
+    color: styles.colors.silver,
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column"
+    }
+  }
+}));
